@@ -57,21 +57,24 @@
 
 ### 2.3 Self-Study App (Classic Memrise)
 
-| Feature | Description |
-|---------|-------------|
-| Dashboard / Home | Central hub showing current word list, lesson start button, learning journey progress, streak counter, and quick access to all features |
-| Vocabulary Lessons | Structured lessons presenting new words with native speaker videos, audio pronunciations, literal translations, and cultural "Did you know?" tips |
-| Video Quiz Testing | Multiple-choice quizzes using native speaker video clips — users identify what was said |
-| Vocabulary Management | "My Words" section tracking words across three states: Learned, Heard, Used. Create custom word lists or review difficult words |
-| Video Library | Filterable library of native speaker video lessons. Filter by: All, Ready to watch, Watched, Needs practice. Searchable by topic |
-| Conversations (MemBot) | AI-powered chatbot for conversational practice. 150+ scenario-based conversations organized into "Chats" (open-ended) and "Missions" (goal-oriented) |
-| Talk Prep (Beta) | 3-step guided conversation practice: Build (shape conversation), Learn (practice saying lines), Perform (say from memory). Sound Like a Local mode |
-| AI Buddies (Beta) | Six AI-powered practice tools: Assistant (general guide), Sentence Builder, Pronunciation, Grammar, Role-Play, Conjugation |
-| Community Word Lists | Browse thousands of user-created word lists organized by popularity and recency. Users can create and share their own lists |
-| Streak Tracking | Daily learning streak counter encouraging consistent practice |
-| My Journey | Progress tracker showing current learning stage (Absolute Beginner through Advanced) |
+| Feature | Description | Maturity |
+|---------|-------------|----------|
+| Dashboard / Home | Central hub showing current word list, lesson start button, learning journey progress, streak counter, and quick access to all features | **Stable** |
+| Vocabulary Lessons | Structured lessons presenting new words with native speaker videos, audio pronunciations, literal translations, and cultural "Did you know?" tips | **Stable** |
+| Video Quiz Testing | Multiple-choice quizzes using native speaker video clips — users identify what was said | **Stable** |
+| Vocabulary Management | "My Words" section tracking words across three states: Learned, Heard, Used. Create custom word lists or review difficult words | **Stable** |
+| Video Library | Filterable library of native speaker video lessons. Filter by: All, Ready to watch, Watched, Needs practice. Searchable by topic | **Stable** |
+| Conversations (MemBot) | AI-powered chatbot for role-play conversational practice. 150+ scenario-based conversations organized into "Chats" (open-ended) and "Missions" (goal-oriented). Each conversation has a scenario description, goal, and character (e.g., Waiter). Features: per-message audio playback, translate button, like/dislike feedback, edit user messages, hint button, microphone input, and auto-translation of user messages. **Free tier limited to ~10 messages per conversation** | **Stable** |
+| Talk Prep (Beta) | 3-step guided conversation practice: Build (shape conversation), Learn (practice saying lines), Perform (say from memory). Sound Like a Local mode | **Beta** |
+| AI Buddies (Beta) | Six AI-powered practice tools, each with a distinct character/avatar and personality. Offer quick-reply topic suggestions and free-text input. Adapt recommendations based on user's skill level and learned vocabulary: **Assistant** (general guide), **Sentence Builder**, **Pronunciation**, **Grammar** (explains rules with examples, offers quizzes), **Role-Play**, **Conjugation** (focuses on verbs user has encountered, offers "Learn the rule" vs "Do the exercise" paths) | **Beta** |
+| Memrise Labs | Experimental feature hub accessible from the dashboard. Contains 5 beta experiments: **Word Nuggets** (grammar tips, cultural insights, etymology), **Verb Conjugation Practice**, **Virtual Tutor** (AI speaking practice), **Speak for Real** (scenario-based practice from words to full conversation), and **Memrise Stories** (the story reading product) | **Beta** |
+| Community Word Lists | Browse thousands of user-created word lists organized by popularity and recency. Users can create and share their own lists. Community reporting/flagging system for quality control | **Stable** |
+| Streak Tracking | Daily learning streak counter encouraging consistent practice | **Stable** |
+| My Journey | Progress tracker showing current learning stage (Absolute Beginner through Advanced) | **Stable** |
 
 ![Self-Study Dashboard](screenshots/29-classic-dashboard.png)
+
+![Dashboard — Community Word Lists & Memrise Labs](screenshots/49-dashboard-bottom.png)
 
 ![Vocabulary Lesson — Word Card](screenshots/39-lesson.png)
 
@@ -79,11 +82,25 @@
 
 ![Video Library](screenshots/31-videos.png)
 
-![Conversations with MemBot](screenshots/32-conversations.png)
+![Conversations — Scenario List](screenshots/32-conversations.png)
+
+![Conversation — Pre-Start Screen](screenshots/45-conversation-chat.png)
+
+![Conversation — Active Chat with MemBot](screenshots/45b-conversation-active.png)
+
+![Conversation — Reply with Auto-Translation & Message Limit](screenshots/45c-conversation-reply.png)
 
 ![Talk Prep (Beta)](screenshots/33-talk-prep.png)
 
-![AI Buddies (Beta)](screenshots/34-ai-buddies.png)
+![AI Buddies — Selection Menu](screenshots/34-ai-buddies.png)
+
+![AI Buddy — Grammar (Loaded with Topic Suggestions)](screenshots/46b-ai-buddy-grammar-loaded.png)
+
+![AI Buddy — Grammar Exercise](screenshots/46c-ai-buddy-grammar-exercise.png)
+
+![AI Buddy — Conjugation (Adaptive to Skill Level)](screenshots/47-ai-buddy-conjugation.png)
+
+![Memrise Labs](screenshots/50-memrise-labs.png)
 
 ![Vocabulary Management](screenshots/30-vocabulary.png)
 
@@ -93,22 +110,22 @@
 
 ### 2.4 Memrise Stories
 
-| Feature | Description |
-|---------|-------------|
-| Stories Onboarding | Separate 4-step onboarding: Name entry, Language selection (Spanish/French/English), Level (Beginner/Intermediate/Advanced), Interest selection from 10 categories |
-| Stories Home | Personalized dashboard showing reading stats (stories reading, read once, total re-reads), recommended stories, and navigation |
-| Story Library | Categorized collection of culturally immersive stories (Food & Markets, Community & Local Life, Traditions & Celebrations) with metadata: type (Short story, Scene, True story), reading time, and origin |
-| 5-Step Reading Flow | Structured reading experience: 1) First Read (unassisted), 2) Discover (vocabulary, phrases, cultural insights), 3) Re-read (bilingual view), 4) Check (sentence reordering exercise), 5) Score (self-assessment) |
-| Tap-to-Translate | Tappable words within stories that reveal translations on demand |
-| Audio Playback | Story narration with normal and slow-speed (turtle icon) playback |
-| Vocabulary Discovery | Post-reading breakdown into Key Phrases, Slang & Vocabulary, and Cultural Insights with "Save to Notebook" option |
-| Bilingual Re-read | Side-by-side Spanish/English view with toggle to hide all translations |
-| Story Order Exercise | Drag-and-drop sentence reordering comprehension check |
-| Self-Assessment | Dual rating system: comprehension level (Lost → Crystal clear) and enjoyment (Loved it / Interesting / Not for me) plus difficulty rating |
-| Notebook | Personal reference with 5 tabs: Words, Phrases, Cultural insights, Notes, Journal |
-| Create Your Own Stories | User-generated story creation capability (shown in library footer) |
-| Your Growth | Learning progress tracking (currently marked "Coming Soon") |
-| Practice | Dedicated practice mode for review (currently marked "Coming Soon") |
+| Feature | Description | Maturity |
+|---------|-------------|----------|
+| Stories Onboarding | Separate 4-step onboarding: Name entry, Language selection (Spanish/French/English), Level (Beginner/Intermediate/Advanced), Interest selection from 10 categories | **Beta** |
+| Stories Home | Personalized dashboard showing reading stats (stories reading, read once, total re-reads), recommended stories, and navigation | **Beta** |
+| Story Library | Categorized collection of culturally immersive stories (Food & Markets, Community & Local Life, Traditions & Celebrations) with metadata: type (Short story, Scene, True story), reading time, and origin. All stories are entirely human-authored | **Beta** |
+| 5-Step Reading Flow | Structured reading experience: 1) First Read (unassisted), 2) Discover (vocabulary, phrases, cultural insights), 3) Re-read (bilingual view), 4) Check (sentence reordering exercise), 5) Score (self-assessment) | **Beta** |
+| Tap-to-Translate | Tappable words within stories that reveal translations on demand | **Beta** |
+| Audio Playback | Story narration with normal and slow-speed (turtle icon) playback | **Beta** |
+| Vocabulary Discovery | Post-reading breakdown into Key Phrases, Slang & Vocabulary, and Cultural Insights with "Save to Notebook" option | **Beta** |
+| Bilingual Re-read | Side-by-side Spanish/English view with toggle to hide all translations | **Beta** |
+| Story Order Exercise | Drag-and-drop sentence reordering comprehension check | **Beta** |
+| Self-Assessment | Dual rating system: comprehension level (Lost → Crystal clear) and enjoyment (Loved it / Interesting / Not for me) plus difficulty rating | **Beta** |
+| Notebook | Personal reference with 5 tabs: Words, Phrases, Cultural insights, Notes, Journal | **Beta** |
+| Create Your Own Stories | User-generated story creation capability (shown in library footer) | **Beta** |
+| Your Growth | Learning progress tracking | **Coming Soon** (next quarter) |
+| Practice | Dedicated practice mode for review | **Coming Soon** (next quarter) |
 
 ![Stories Onboarding — Name](screenshots/10-stories-home.png)
 
@@ -250,6 +267,14 @@
 | FR-28 | The system shall allow account deletion with a permanent data removal warning |
 | FR-29 | The system shall provide GDPR-compliant personal data download |
 | FR-30 | The system shall support per-language learning settings (each language can have its own skill level, session sizes, and test preferences) |
+| FR-31 | The system shall enforce message limits on free-tier AI conversations (approximately 10 messages per conversation session), displaying remaining count in the input field |
+| FR-32 | The system shall auto-translate user messages in conversations (showing English translation below Spanish input) |
+| FR-33 | The system shall allow users to edit sent messages in conversations |
+| FR-34 | The system shall provide per-message audio playback, translation, and like/dislike feedback in AI conversations |
+| FR-35 | The system shall offer quick-reply topic suggestions in AI Buddy interactions that adapt based on the user's current skill level and vocabulary |
+| FR-36 | The system shall provide a Memrise Labs hub showcasing beta experiments (Word Nuggets, Verb Conjugation Practice, Virtual Tutor, Speak for Real, Memrise Stories) |
+| FR-37 | The system shall provide a "Hint" button in conversations to help users formulate responses when stuck |
+| FR-38 | The system shall support sidebar navigation that adapts by language — features like Talk Prep, AI Buddies, and Stories appear only for languages that support them |
 
 ---
 
@@ -272,6 +297,10 @@
 | BR-13 | **Trial Offer:** New users are offered a free 3-day Pro trial during the commitment selection step |
 | BR-14 | **Multi-Language Support:** Users can learn multiple languages on a single account. The language selector in the top bar allows switching between active languages |
 | BR-15 | **Account Deletion:** Account deletion is permanent and irreversible. All learning progress is removed |
+| BR-16 | **Free Tier Conversation Limits:** Free users are limited to approximately 10 messages per AI conversation session, displayed as "Messages left: N" in the input field. Pro subscribers have unlimited messages |
+| BR-17 | **Language-Dependent Features:** The sidebar navigation adapts based on the selected language. Features like Talk Prep, AI Buddies, and Stories are only available for select languages (e.g., Spanish) and do not appear for others (e.g., Japanese) |
+| BR-18 | **Phrasebooks Deprecated:** The former Phrasebook pages now redirect to a "Community Word Lists" page, confirming this feature has been folded into the Community Word Lists experience |
+| BR-19 | **AI Buddy Skill Adaptation:** AI Buddies personalize their recommendations based on the user's self-assessed skill level and vocabulary they have previously learned, ensuring practice is contextually relevant |
 
 ---
 
@@ -417,7 +446,42 @@ The collective of Memrise users who create and share word lists. The Community W
 6. User arrives at the personalized Stories Dashboard
    ![Stories Dashboard](screenshots/14-stories-dashboard.png)
 
-### 7.5 Upgrading to Pro
+### 7.5 AI Conversation Flow
+
+1. User navigates to Conversations and selects a scenario (e.g., "Getting a table at a restaurant")
+
+2. Pre-start screen shows the scenario description and goal
+   ![Conversation Pre-Start](screenshots/45-conversation-chat.png)
+
+3. User clicks "Start conversation" — the MemBot character opens with a message in the target language, with audio playback
+   ![Active Conversation](screenshots/45b-conversation-active.png)
+
+4. User types a response in the target language (or English). System auto-translates the message below in grey
+   ![Conversation Reply](screenshots/45c-conversation-reply.png)
+
+5. MemBot responds in character, staying in the target language. Each message has Audio, Translate, Like/Dislike controls
+
+6. "Messages left: N" counter decrements with each exchange (free tier only)
+
+7. Conversation ends when the goal is achieved or messages run out
+
+### 7.6 AI Buddy Interaction Flow
+
+1. User navigates to AI Buddies and selects a practice type (Grammar, Conjugation, etc.)
+   ![AI Buddies Selection](screenshots/34-ai-buddies.png)
+
+2. The AI Buddy introduces itself and offers topic suggestions tailored to the user's vocabulary
+   ![Grammar Buddy](screenshots/46b-ai-buddy-grammar-loaded.png)
+
+3. User selects a quick-reply topic or types a custom request
+
+4. The Buddy provides an explanation with examples, then offers "Learn more" or "Take a quiz" paths
+   ![Grammar Exercise](screenshots/46c-ai-buddy-grammar-exercise.png)
+
+5. For Conjugation: Buddy detects verbs the user has learned and focuses on those, adapting to skill level
+   ![Conjugation Buddy](screenshots/47-ai-buddy-conjugation.png)
+
+### 7.7 Upgrading to Pro
 
 1. User clicks "Upgrade to Pro" from the sidebar or encounters a gated feature
 
@@ -436,7 +500,8 @@ The collective of Memrise users who create and share word lists. The Community W
 | **Failed signup** | If the email is already registered, the system should display an appropriate error message |
 | **Select-product page JS error** | Observed during testing: the /select-product page occasionally fails to render (JS error "Cannot read properties of undefined (reading 'gridRows')"). Users are stuck on a white screen. Navigating directly to /dashboard works as a workaround |
 | **AI Buddies 404** | Direct navigation to /ai-buddies returns a 404. The correct URL is /buddies. Internal navigation from the sidebar works correctly |
-| **Exam Prep page gone** | The /exam-prep URL returns a 404 with a redirect to Community Word Lists. Exam prep content appears to have been merged into the main product |
+| **Exam Prep being rebuilt** | The /exam-prep URL returns a 404 with a redirect to Community Word Lists. Exam Prep is being rebuilt as a new feature (confirmed by stakeholder) |
+| **Phrasebooks deprecated** | The /phrasebook/* URLs redirect to a Community Word Lists page, confirming phrasebooks have been absorbed into the community content system |
 | **Empty state — My Words** | When no words have been learned, the My Words page shows an empty state with encouragement to start learning |
 | **Empty state — Notebook** | New users see empty Notebook tabs with no content until they save items from stories |
 | **Coming Soon features** | "Your Growth" and "Practice" sections in Stories display "Coming Soon" placeholders rather than functional content |
@@ -444,6 +509,8 @@ The collective of Memrise users who create and share word lists. The Community W
 | **Streak reset** | If a user misses a day, the streak resets to zero. The manual override in Learning Settings allows restoration |
 | **Multiple products confusion** | Users navigate between two distinct products (Self-Study at /dashboard and Stories at /stories) with different navigation structures, which may cause confusion |
 | **Free user hitting Pro gates** | When free users attempt to access Pro-only features, the system should redirect to the pricing page |
+| **Free tier conversation exhaustion** | When a free user runs out of conversation messages (~10 per session), the input field shows "Messages left: 0" and further input is disabled |
+| **Language-dependent sidebar** | Features like Talk Prep, AI Buddies, and Stories do not appear in the sidebar for all languages (e.g., not visible for Japanese), which may confuse users who switch languages |
 | **Browser compatibility** | The Stories product is a modern SPA that may have rendering issues in older browsers |
 
 ---
