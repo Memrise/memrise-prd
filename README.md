@@ -582,3 +582,122 @@ The collective of Memrise users who create and share word lists. The Community W
 8. **Notification system:** Whether the platform sends email reminders, streak warnings, or learning nudges is not visible from the web interface alone.
 
 9. **Exam Prep redesign scope:** The rebuilt Exam Prep feature's shape, timeline, and target exams are unknown.
+
+---
+
+## 11. Mobile App (iOS & Android) — Supplemental Requirements
+
+> This section documents mobile-specific UI patterns, screens, and flows observed from the native iOS and Android apps that differ from or extend the web experience.
+
+### 11.1 Navigation — Tab Bar
+
+The mobile apps use a persistent bottom tab bar with 5 tabs:
+
+| Tab | Icon | Description |
+|-----|------|-------------|
+| Home | House | Central dashboard with score block, streak, pro banner, suggested session |
+| Scenarios | Map | Learning path / scenario discovery |
+| Videos | Play circle | Native speaker video library |
+| Conversations | Chat bubbles | MemBot conversations — Chats & Missions |
+| AI Buddies | Sparkles | AI practice tools grid |
+
+### 11.2 Conversations Tab (Mobile)
+
+The mobile Conversations tab differs from web in layout:
+
+- **Photo card design:** Each conversation scenario shows a full-width photograph (e.g., a café for "Ordering your favourite coffee") with a dark navy "Missions" or "Chats" badge overlaid in the top-left corner
+- **Filter tabs:** Horizontal pills at the top — "All", "Chats", "Missions" — using dark fill for the active state
+- **MemBot footer:** "MemBot - powered by AI" label centered below the card list
+- **Promo banner:** Persistent navy pill at the top promoting Memrise Lifetime discount (e.g., "64% off Memrise Lifetime")
+- **Header bar:** Flag pill (selected language), book dropdown, stats icon, book icon, streak badge, avatar circle
+
+### 11.3 AI Buddies (Mobile)
+
+- **2×2 colored grid:** Four buddy cards in a 2-column grid, each with a distinct background color:
+  - Assistant — green (#2D8B6F)
+  - Sentence Builder — purple (#6B5CE7)
+  - Pronunciation — teal (#2D8B8B)
+  - Grammar — navy (#1B1F3B) with a lock icon (Pro-gated)
+- **"Beta" badge:** Yellow rounded badge next to "Your Buddies" title
+- **Robot avatars:** Each card has a white circle with an icon representing the buddy type
+- **"Meet your Buddies!" bottom sheet:** Slides up with overlapping avatar circles, title, description, and a yellow "Say Hello" CTA button
+
+### 11.4 Streak Celebration Modal
+
+Triggered when a user completes their daily learning activity:
+
+- **Modal overlay** with close button (X) in top-left
+- **Fire icon** (🔥) inside a green-bordered circle with small celebration dots (yellow, green, coral) around it
+- **Title:** "Your daily streak has grown! 🔥"
+- **Description:** "Each day watch a video, practice a conversation, learn or review words to keep your streak growing."
+- **Current streak display:** "Current streak: N day(s)"
+- **Weekly calendar:** S M T W T F S with checkmark circles on completed days
+- **"Got it" CTA:** Full-width yellow rounded button
+
+### 11.5 My Activities Screen
+
+Accessed from the Home dashboard via "My Activities" pill:
+
+- **Time range toggle:** "Last 7 days" / "Last 30 days" pills with border highlight on active
+- **Date range label:** "Showing data for [date] - [date]"
+- **Three-pillar stats:**
+  - 🌱 **Learn words** — Words learned (with green trend badge), Words reviewed (green background cards)
+  - 🎬 **Hear my words** — Words heard, Videos watched, Videos understood, Partly understood (pink background cards)
+  - 💬 **Use my words** — Navigation pill to conversation stats
+- Each stat card shows the metric name, numeric value, and optional green up-arrow trend indicator
+
+### 11.6 Settings Screen (Mobile)
+
+The mobile settings screen has a specific layout matching the native app:
+
+| Section | Items |
+|---------|-------|
+| **Profile** | Username (read-only display), Email (read-only display) |
+| — | Reset password (chevron row) |
+| **Membership** | "FREE Membership" label with yellow "⭐ Upgrade" badge (or "PRO" if subscribed) |
+| **Settings links** | Learning & sound settings (chevron), Notification settings (chevron) |
+| **DARK MODE** | "Use device settings" with green toggle switch, moon icon |
+| **AUDIO PREFERENCES** | "Sound effects" with green toggle switch, speaker icon |
+| **Actions** | Help (chevron), Log out (chevron), Delete Account (chevron, red text) |
+
+Header: Close button (X) on left, "Settings" title centered, "Save" on right.
+
+### 11.7 Free vs PRO Comparison (Mobile)
+
+A bottom-sheet modal showing feature comparison:
+
+- **Dark navy header:** "Unlock even more features" in yellow, "Join 370,000 learners committed to PRO" in white
+- **Two-column table:** Feature name | Free (gray check) | PRO (yellow check)
+- **Features listed:** All languages, Native speaker videos, Conversation practice with AI, Sentence builder exercises, Pronunciation practice, Unlock all vocabulary lessons, AD FREE, Grammar lessons, Verb conjugation drills, Extra role-play sessions
+- **Sticky CTA:** "View PRO plans" yellow pill at bottom
+
+### 11.8 Languages Management Screen
+
+- **Header:** Close button, "Languages" title, "+ Add" button
+- **Language list:** Each entry shows flag, language name, source language (e.g., "from English (UK)")
+- **Active language** has a yellow/gold border highlight
+- **Three-dot menu** per language for options (reset, remove)
+
+### 11.9 Mobile-Specific Streak Display
+
+In addition to the celebration modal, the streak appears in two places:
+
+1. **Home header:** Yellow pill with flame icon + streak count (tappable to open streak modal)
+2. **Buddies tab bottom sheet:** Shows "Your streak" section with:
+   - "Current N day(s)" with green progress bar + checkmark
+   - "Longest N day(s)" with green progress bar
+   - Description text about keeping streak growing
+
+### 11.10 App Store Requirements
+
+| Requirement | iOS | Android |
+|-------------|-----|---------|
+| Bundle ID | `com.memrise.mobile` | `com.memrise.mobile` |
+| Category | Education | Education |
+| iPad support | Yes (universal) | N/A |
+| Minimum OS | iOS 16+ | Android 6.0 (API 23) |
+| Permissions | Microphone (speaking practice), Notifications (daily reminders) | RECORD_AUDIO, POST_NOTIFICATIONS |
+| Privacy manifest | Required (UserDefaults API) | N/A |
+| Adaptive icon | N/A | Foreground image + cream background |
+| Dark mode | "Use device settings" toggle | "Use device settings" toggle |
+| Audio background mode | Yes (lesson audio) | Yes |
