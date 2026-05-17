@@ -587,11 +587,186 @@ The collective of Memrise users who create and share word lists. The Community W
 
 ## 11. Mobile App (iOS & Android) — Supplemental Requirements
 
-> This section documents mobile-specific UI patterns, screens, and flows observed from the native iOS and Android apps that differ from or extend the web experience.
+> This section documents mobile-specific UI patterns, screens, and flows observed from the native iOS and Android apps that differ from or extend the web experience. Each subsection includes actual mobile screenshots mapped to their web counterparts from earlier sections.
 
-### 11.1 Navigation — Tab Bar
+### 11.1 Welcome / Splash Screen
 
-The mobile apps use a persistent bottom tab bar with 5 tabs:
+The mobile app opens with a distinctive yellow splash screen explaining Memrise's value proposition.
+
+![Mobile — Welcome Screen](screenshots/mobile-01-welcome.png)
+
+**Key elements:**
+- Yellow background (#FFC800) with the tagline "Why is Memrise different?"
+- Three benefit blocks with icons: native speaker videos, AI conversation practice, spaced repetition
+- Two CTAs: "Get started" (dark navy pill) and "I have an account" (text link)
+
+**Web counterpart → Section 2.1 Landing Page:**
+
+![Web — Landing Page](screenshots/01-landing-page.png)
+
+The web landing page serves the same purpose but uses a horizontal hero layout with a "Get started — it's free!" CTA. The mobile version is vertically stacked and more concise.
+
+---
+
+### 11.2 Language Selection
+
+After tapping "Get started", users choose their native language and target language.
+
+![Mobile — Language Selection](screenshots/mobile-02-language-selection.png)
+
+**Key elements:**
+- "I speak English (US)" preset at top with change option
+- "I want to learn" heading with searchable alphabetical language list
+- Flag icons next to each language name
+- Full-screen modal with back navigation
+
+**Web counterpart → Section 2.2 Signup & Onboarding:**
+
+![Web — Language Selection](screenshots/02-signup-start.png)
+
+The web uses a grid of language cards with flags, while mobile uses a scrollable list format optimized for one-handed use.
+
+---
+
+### 11.3 Sign Up
+
+The signup screen shows authentication options with the selected language flag.
+
+![Mobile — Sign Up](screenshots/mobile-03-signup.png)
+
+**Key elements:**
+- Selected language flag displayed prominently (e.g., Japanese 🇯🇵)
+- Four sign-up methods stacked vertically: Apple, Google, Facebook, Email
+- Each method uses a full-width pill button with provider icon
+- "Already have an account?" link at the bottom
+
+**Web counterpart → Section 2.2:**
+
+![Web — Signup Form](screenshots/03-onboarding-signup.png)
+
+The web signup similarly offers social auth + email, but embeds it in a multi-step onboarding wizard rather than a standalone screen.
+
+---
+
+### 11.4 Skill Level Selection
+
+Users tailor their experience by selecting their current proficiency.
+
+![Mobile — Skill Level Selection](screenshots/mobile-04-skill-level.png)
+
+**Key elements:**
+- Heading: "Tailor your lessons by choosing your level"
+- Four level options as tappable cards: "Learn from scratch", "Getting started", "Making good progress", "Improving my skills"
+- Each card has an icon and brief description
+- Clean white background with ample spacing
+
+**Web counterpart → Section 2.2:**
+
+![Web — Skill Level Selection](screenshots/05-course-home.png)
+
+The web version presents skill levels as part of the onboarding wizard flow with similar options but different visual treatment.
+
+---
+
+### 11.5 Free vs PRO Comparison
+
+A bottom-sheet modal showing the feature comparison between free and paid tiers.
+
+![Mobile — Free vs PRO Comparison](screenshots/mobile-05-free-vs-pro.png)
+
+**Key elements:**
+- Dark navy header: "Unlock even more features" in yellow text
+- Subtitle: "Join 370,000 learners committed to PRO" in white
+- Two-column comparison table: Feature name | Free (gray check) | PRO (yellow check)
+- Features listed: All languages, Native speaker videos, Conversation practice with AI, Sentence builder exercises, Pronunciation practice, Unlock all vocabulary lessons, AD FREE, Grammar lessons, Verb conjugation drills, Extra role-play sessions
+- Sticky CTA: "View PRO plans" yellow pill at bottom
+- "I'll stay on free plan" text link below
+
+**Web counterpart → Section 5.1 Pricing Page:**
+
+![Web — Pricing Comparison](screenshots/38-pricing.png)
+
+The web pricing page uses a wider card-based layout with monthly/annual toggle, while mobile uses a compact bottom-sheet checklist format.
+
+---
+
+### 11.6 Points & Levels System
+
+An onboarding screen introducing the gamification mechanics.
+
+![Mobile — Points & Levels](screenshots/mobile-06-points-levels.png)
+
+**Key elements:**
+- Title: "Introducing points & levels"
+- Visual pyramid of numbered circles (1–5) showing level progression
+- Explanation text describing how points are earned through learning activities
+- Yellow "OK" CTA button at bottom
+- Shown once during first-time onboarding
+
+This screen has no direct web counterpart — the web exposes points/levels inline on the dashboard rather than as a dedicated onboarding step.
+
+---
+
+### 11.7 Home Dashboard — "My Words" Coach Mark
+
+The home dashboard with an overlay coach mark introducing the "My Words" feature.
+
+![Mobile — Home with My Words Coach Mark](screenshots/mobile-07-home-mywords-coach.png)
+
+**Key elements:**
+- Dashboard visible behind a semi-transparent overlay
+- Coach mark bottom sheet: "Introducing My Words!" with description and "Check it out!" CTA
+- Dashboard shows: language flag pill (Spain 🇪🇸), score block, landmark illustration (Sagrada Familia), current lesson progress
+- Header: flag selector, stats icon, book icon, streak badge (fire + count), avatar circle
+
+**Web counterpart → Section 3.1 Self-Study Dashboard:**
+
+![Web — Self-Study Dashboard](screenshots/29-classic-dashboard.png)
+
+The web dashboard has a wider layout with sidebar navigation. The mobile version condenses this into the tab-based layout with the same core widgets (score, streak, suggested session) but uses coach marks for feature discovery.
+
+---
+
+### 11.8 Home Dashboard — "My Activities" Coach Mark
+
+The same dashboard with a coach mark for the "My Activities" feature.
+
+![Mobile — Home with My Activities Coach Mark](screenshots/mobile-08-home-activities-coach.png)
+
+**Key elements:**
+- Coach mark bottom sheet: "Introducing My Activities!" with description and CTA
+- Points to the activities/stats section of the dashboard
+- Part of the progressive disclosure onboarding — shown after "My Words" coach mark
+
+**Web counterpart:** The web doesn't have a dedicated "My Activities" equivalent; activity stats are distributed across the dashboard and profile pages.
+
+---
+
+### 11.9 Home Dashboard — Full View
+
+The complete home dashboard without overlays, showing the primary learning interface.
+
+![Mobile — Home Dashboard Full View](screenshots/mobile-09-home-full.png)
+
+**Key elements:**
+- **Header bar:** Language flag pill, book dropdown, stats icon, book icon, streak badge (yellow pill with 🔥 + count), avatar circle
+- **Score block:** Current points display with level indicator
+- **Landmark illustration:** Cultural landmark for the selected language (e.g., Sagrada Familia for Spanish)
+- **Lesson progress:** Current lesson card with "Learn words" sticky bar at bottom
+- **Tab bar:** 5 persistent tabs — Home, Scenarios, Videos, Conversations, AI Buddies
+- **PRO banner:** Promotional banner for upgrading (if on free tier)
+
+**Web counterpart → Section 3.1:**
+
+![Web — Dashboard with Community Lists](screenshots/49-dashboard-bottom.png)
+
+The web dashboard includes community word lists and Memrise Labs links that don't appear on mobile. The mobile version focuses on the core learning loop with a single prominent CTA.
+
+---
+
+### 11.10 Navigation — Tab Bar
+
+The mobile apps use a persistent bottom tab bar visible in the full home view (mobile-09) with 5 tabs:
 
 | Tab | Icon | Description |
 |-----|------|-------------|
@@ -601,7 +776,9 @@ The mobile apps use a persistent bottom tab bar with 5 tabs:
 | Conversations | Chat bubbles | MemBot conversations — Chats & Missions |
 | AI Buddies | Sparkles | AI practice tools grid |
 
-### 11.2 Conversations Tab (Mobile)
+---
+
+### 11.11 Conversations Tab (Mobile)
 
 The mobile Conversations tab differs from web in layout:
 
@@ -611,7 +788,13 @@ The mobile Conversations tab differs from web in layout:
 - **Promo banner:** Persistent navy pill at the top promoting Memrise Lifetime discount (e.g., "64% off Memrise Lifetime")
 - **Header bar:** Flag pill (selected language), book dropdown, stats icon, book icon, streak badge, avatar circle
 
-### 11.3 AI Buddies (Mobile)
+**Web counterpart → Section 3.4:**
+
+![Web — Conversations Scenario List](screenshots/32-conversations.png)
+
+---
+
+### 11.12 AI Buddies (Mobile)
 
 - **2×2 colored grid:** Four buddy cards in a 2-column grid, each with a distinct background color:
   - Assistant — green (#2D8B6F)
@@ -622,7 +805,13 @@ The mobile Conversations tab differs from web in layout:
 - **Robot avatars:** Each card has a white circle with an icon representing the buddy type
 - **"Meet your Buddies!" bottom sheet:** Slides up with overlapping avatar circles, title, description, and a yellow "Say Hello" CTA button
 
-### 11.4 Streak Celebration Modal
+**Web counterpart → Section 3.6:**
+
+![Web — AI Buddies Selection Menu](screenshots/34-ai-buddies.png)
+
+---
+
+### 11.13 Streak Celebration Modal
 
 Triggered when a user completes their daily learning activity:
 
@@ -634,7 +823,9 @@ Triggered when a user completes their daily learning activity:
 - **Weekly calendar:** S M T W T F S with checkmark circles on completed days
 - **"Got it" CTA:** Full-width yellow rounded button
 
-### 11.5 My Activities Screen
+---
+
+### 11.14 My Activities Screen
 
 Accessed from the Home dashboard via "My Activities" pill:
 
@@ -646,9 +837,9 @@ Accessed from the Home dashboard via "My Activities" pill:
   - 💬 **Use my words** — Navigation pill to conversation stats
 - Each stat card shows the metric name, numeric value, and optional green up-arrow trend indicator
 
-### 11.6 Settings Screen (Mobile)
+---
 
-The mobile settings screen has a specific layout matching the native app:
+### 11.15 Settings Screen (Mobile)
 
 | Section | Items |
 |---------|-------|
@@ -662,23 +853,22 @@ The mobile settings screen has a specific layout matching the native app:
 
 Header: Close button (X) on left, "Settings" title centered, "Save" on right.
 
-### 11.7 Free vs PRO Comparison (Mobile)
+**Web counterpart → Section 6:**
 
-A bottom-sheet modal showing feature comparison:
+![Web — Profile Settings](screenshots/36-profile-settings.png)
 
-- **Dark navy header:** "Unlock even more features" in yellow, "Join 370,000 learners committed to PRO" in white
-- **Two-column table:** Feature name | Free (gray check) | PRO (yellow check)
-- **Features listed:** All languages, Native speaker videos, Conversation practice with AI, Sentence builder exercises, Pronunciation practice, Unlock all vocabulary lessons, AD FREE, Grammar lessons, Verb conjugation drills, Extra role-play sessions
-- **Sticky CTA:** "View PRO plans" yellow pill at bottom
+---
 
-### 11.8 Languages Management Screen
+### 11.16 Languages Management Screen
 
 - **Header:** Close button, "Languages" title, "+ Add" button
 - **Language list:** Each entry shows flag, language name, source language (e.g., "from English (UK)")
 - **Active language** has a yellow/gold border highlight
 - **Three-dot menu** per language for options (reset, remove)
 
-### 11.9 Mobile-Specific Streak Display
+---
+
+### 11.17 Mobile-Specific Streak Display
 
 In addition to the celebration modal, the streak appears in two places:
 
@@ -688,7 +878,9 @@ In addition to the celebration modal, the streak appears in two places:
    - "Longest N day(s)" with green progress bar
    - Description text about keeping streak growing
 
-### 11.10 App Store Requirements
+---
+
+### 11.18 App Store Requirements
 
 | Requirement | iOS | Android |
 |-------------|-----|---------|
