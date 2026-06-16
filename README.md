@@ -15,7 +15,7 @@
 
 **Value Proposition:** Unlike traditional flashcard apps, Memrise immerses learners in real-world language through native speaker videos, AI conversation partners, pronunciation coaching, and culturally grounded stories. The platform offers structured self-study courses, a comprehensive "Speak" practice hub, an "Explore" discovery area, and experimental prototypes in Memrise Labs, catering to learners at every level across 150+ languages.
 
-**Deployment Model:** Web application (memrise.com / app.memrise.com), with companion mobile apps (iOS and Android). The platform has undergone a "Spring Cleaning" reorganization that restructures navigation into four main tabs: Home, Learn, Speak, and Explore, consolidating previously scattered features into a cleaner information architecture.
+**Deployment Model:** Web application (memrise.com / app.memrise.com), with companion mobile apps (iOS and Android). The platform uses a four-tab navigation structure: Home, Learn, Speak, and Explore.
 
 ---
 
@@ -56,8 +56,8 @@
 
 | Feature | Description | Status |
 |---------|-------------|--------|
-| Dashboard / Home | Central hub showing current word list progress, pronunciation card, immerse (video) card, and quick access to all features. Spring Cleaning layout uses a focused card-based design with current wordlist prominent | **Stable** |
-| Learn Tab (Vocabulary Hub) | Consolidated vocabulary learning hub with current word list, practice/review cards (Classic Review, Speed Review, Difficult Words), Arabic Script card, My Words dashboard card, and Word Lists card | **Stable** |
+| Dashboard / Home | Central hub showing current word list progress, pronunciation card, immerse (video) card, and quick access to all features. Uses a focused card-based design with current wordlist prominent | **Stable** |
+| Learn Tab (Vocabulary Hub) | Vocabulary learning hub with current word list, practice/review cards (Classic Review, Speed Review, Difficult Words), Arabic Script card, My Words dashboard card, and Word Lists card | **Stable** |
 | Vocabulary Lessons | Structured lessons presenting new words with native speaker videos, audio pronunciations, literal translations, and cultural "Did you know?" tips. Configurable session sizes (3/5/7/10 words) | **Stable** |
 | Video Quiz Testing | Multiple-choice quizzes using native speaker video clips for recall testing | **Stable** |
 | Vocabulary Management (My Words) | Words tracked across three states: Learned, Heard, Used. Users can review difficult words and create custom word lists | **Stable** |
@@ -85,10 +85,10 @@
 
 | Feature | Description | Status |
 |---------|-------------|--------|
-| Speak Hub | Consolidated speaking practice page combining pronunciation exercises and conversation missions. Shows a "not available" banner for unsupported language pairs | **Stable** |
+| Speak Hub | Speaking practice page with pronunciation exercises and conversation missions. Shows a "not available" banner for unsupported language pairs | **Stable** |
 | Pronunciation Practice | AI-powered pronunciation coaching via a dedicated "Pronunciation Buddy." Provides real-time feedback on spoken words and phrases | **Stable** |
 | Conversation Missions (MemBot) | AI-powered chatbot for role-play conversational practice. 150+ scenario-based conversations organized by topic. Each conversation has a scenario description, goal, and character. Features: per-message audio playback, translate button, like/dislike feedback, edit user messages, hint button, microphone input, and auto-translation | **Stable** |
-| Conversation Recommendations | Personalized mission recommendations based on learning progress, displayed prominently on the Speak page | **New** |
+| Conversation Recommendations | Personalized mission recommendations based on learning progress, displayed prominently on the Speak page | **Stable** |
 | Topic Filtering | Filter conversation missions by topic using radio button pills (All, plus topic categories extracted from available missions) | **Stable** |
 | Free Tier Message Limits | Free users limited to approximately 10 messages per conversation session. "Messages left: N" displayed in input field. Pro subscribers have unlimited messages | **Stable** |
 
@@ -102,7 +102,7 @@
 
 | Feature | Description | Status |
 |---------|-------------|--------|
-| Explore Hub | Discovery page consolidating Labs, Stories, Talk Prep, Skills Check, and AI Buddies into a single grid-based card layout with My Journey and My Activities dashboard cards below | **New** |
+| Explore Hub | Discovery page containing Labs, Stories, Talk Prep, Skills Check, and AI Buddies in a grid-based card layout, with My Journey and My Activities dashboard cards below | **Stable** |
 | Memrise Labs | Experimental feature hub with 11 production prototypes: Character Writing Practice, Word Nuggets, My Grammar, Verb Conjugation Practice, Virtual Tutor, New Talk Back Mode, Arabic Script, Speak for Real, Interactive English Podcasts, Skills Check, Memrise Stories. Additional non-production prototypes in development | **Beta** |
 | Memrise Stories | Story-based reading experience with a 5-step flow: First Read, Discover, Re-read, Check, Score. Separate onboarding with name, language, level, and interest selection. Categories include Food & Markets, Community & Local Life, Traditions & Celebrations | **Beta** |
 | Talk Prep | 3-step guided conversation practice: Build (shape conversation), Learn (practice saying lines), Perform (say from memory). Includes "Sound Like a Local" mode | **Beta** |
@@ -216,7 +216,7 @@
 | FR-9 | The system shall allow users to mark words as "difficult" for targeted review |
 | FR-10 | The system shall provide a video library filterable by watch status (All, Ready to watch, Watched, Needs practice) with search |
 | FR-11 | The system shall offer AI-powered conversational practice (MemBot) with 150+ scenario-based conversation topics organized by theme |
-| FR-12 | The system shall provide a Speak hub combining pronunciation practice and conversation missions with personalized recommendations |
+| FR-12 | The system shall provide a Speak hub with pronunciation practice and conversation missions, including personalized recommendations |
 | FR-13 | The system shall provide seven+ AI Buddy tools: Assistant, Sentence Builder, Pronunciation, Grammar, Role-Play, Conjugation, Translator, and Culture |
 | FR-14 | The system shall allow users to browse, search, create, and subscribe to community-created word lists |
 | FR-15 | The system shall present stories in a 5-step reading flow: First Read, Discover, Re-read, Check, Score |
@@ -243,7 +243,7 @@
 | FR-36 | The system shall provide a Memrise Labs hub showcasing beta experiments with language-pair-aware filtering |
 | FR-37 | The system shall provide a "Hint" button in conversations to help users formulate responses when stuck |
 | FR-38 | The system shall provide sidebar navigation that adapts by language and user state, with features appearing only for supported language pairs |
-| FR-39 | The system shall provide an Explore hub consolidating discovery features (Labs, Stories, Talk Prep, Skills Check, AI Buddies) into a card-based layout |
+| FR-39 | The system shall provide an Explore hub containing discovery features (Labs, Stories, Talk Prep, Skills Check, AI Buddies) in a card-based layout |
 | FR-40 | The system shall provide conversation recommendations on the Speak page based on user's learning progress |
 | FR-41 | The system shall provide exam preparation with practice tests and AI-generated performance feedback |
 | FR-42 | The system shall support AI-powered bulk word generation for custom word lists (Pro feature) |
@@ -271,11 +271,11 @@
 | BR-14 | **Multi-Language Support:** Users can learn multiple languages on a single account. The language selector in the top bar allows switching between active languages, with the last-used pair saved to local storage |
 | BR-15 | **Account Deletion:** Account deletion is permanent and irreversible. All learning progress is removed |
 | BR-16 | **Free Tier Conversation Limits:** Free users are limited to approximately 10 messages per AI conversation session, displayed as "Messages left: N" in the input field. Pro subscribers have unlimited messages |
-| BR-17 | **Language-Dependent Features:** Navigation adapts based on selected language. In Spring Cleaning mode: Speak tab shows only if pronunciation or conversations are supported; Explore tab always shows; specific features (Stories, Talk Prep, Skills Check) appear only for qualifying language pairs |
+| BR-17 | **Language-Dependent Features:** Navigation adapts based on selected language. Speak tab shows only if pronunciation or conversations are supported for the language pair. Explore tab always shows. Specific features (Stories, Talk Prep, Skills Check) appear only for qualifying language pairs |
 | BR-18 | **Phrasebooks & Courses Deprecated:** Former Phrasebook and Course pages display a "page doesn't exist" notice with a link to Community Word Lists. The navigation menu items still exist on the marketing site |
 | BR-19 | **AI Buddy Skill Adaptation:** AI Buddies personalize their recommendations based on the user's self-assessed skill level and vocabulary they have previously learned |
 | BR-20 | **Token-Based Feature Gating:** Pro features use a token-based availability system. Each feature type (videos, conversations, review modes, buddy types, pronunciation, AI word generation) has independent availability checks |
-| BR-21 | **Spring Cleaning Navigation:** All users now see the Spring Cleaning layout (threshold is userId > 0, meaning all users). Navigation tabs are: Home, Learn, Speak, Explore. Videos tab appears only for non-Spring Cleaning users or those on the 2024 experience |
+| BR-21 | **Navigation Structure:** The platform uses four main navigation tabs: Home, Learn, Speak, Explore. Videos are accessed via the Immerse card on the Home tab and through the Video Library in the Learn tab, not as a separate navigation tab |
 | BR-22 | **Labs Language Filtering:** Labs prototypes are shown/hidden based on the user's source and target language combination. Only production-ready prototypes are shown in the live environment |
 | BR-23 | **Exam Prep Integration:** Exam Prep is delivered via a separate embedded application (Kotlin-based), not through the main web client SPA |
 
@@ -284,7 +284,7 @@
 ## 6. Domain Concepts
 
 ### User
-A person who has created an account on Memrise. Users have a username, email, and password (or social auth credentials). They can learn multiple languages simultaneously, each with independent progress and settings. Users have an experience type (2024 or 2025) that determines their interface layout.
+A person who has created an account on Memrise. Users have a username, email, and password (or social auth credentials). They can learn multiple languages simultaneously, each with independent progress and settings.
 
 ### Language Pair
 The combination of a user's native language (source) and the language they are learning (target). Each language pair has its own eligibility settings determining which features are available (AI Buddies, Conversations, Videos, etc.).
@@ -357,7 +357,7 @@ A gamification system where users earn points through learning activities. Point
 9. User arrives at the Home Dashboard, ready to start their first lesson
    ![Dashboard](screenshots/07-dashboard-home.png)
 
-### 7.2 Home Dashboard (Spring Cleaning)
+### 7.2 Home Dashboard
 
 1. User lands on the Home tab showing their current word list with progress and a "Start lesson" button
    ![Dashboard Home](screenshots/07-dashboard-home.png)
@@ -537,7 +537,7 @@ A gamification system where users earn points through learning activities. Point
 
 ### Confirmed Facts (from codebase analysis)
 
-1. **Spring Cleaning is fully rolled out:** The isSpringCleaning threshold is set to userId > 0, meaning all users see the new Spring Cleaning navigation layout (Home, Learn, Speak, Explore tabs).
+1. **Four-tab navigation for all users:** All users see the current navigation layout with Home, Learn, Speak, and Explore tabs.
 
 2. **Geo-based pricing:** Pricing varies by country/region. The Euro amounts shown (Lifetime €76.50, Annual €69.99/yr, Monthly €21.99/mo) are region-specific. Lifetime pricing shows 70% off from €254.99.
 
@@ -549,13 +549,11 @@ A gamification system where users earn points through learning activities. Point
 
 6. **Exam Prep is a separate Kotlin app:** Exam preparation is delivered via an embedded Kotlin application, separate from the main React codebase.
 
-7. **AI Buddies expanded to 7+ types:** Beyond the original 6, buddies now include Translator and Culture types with per-type Pro gating.
+7. **AI Buddies include 8 types:** Assistant, Sentence Builder, Pronunciation, Grammar, Role-Play, Conjugation, Translator, and Culture. Each has per-type Pro gating.
 
 8. **Consumer subscriptions are the sole revenue model:** No institutional or B2B licensing. Revenue comes from consumer Pro subscriptions.
 
 9. **Conversations support voice input:** The conversation interface supports both text input and microphone-based voice input for speaking practice.
-
-10. **Experience versioning:** The platform supports "2024" and "2025" experience types, with 2025 being the current default that enables the Spring Cleaning layout.
 
 ### Assumptions
 
