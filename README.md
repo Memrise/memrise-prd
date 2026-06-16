@@ -1,21 +1,21 @@
-# Memrise — Product Requirements Document
+# Memrise - Product Requirements Document
 
 ## 1. Overview
 
 **Product Name:** Memrise
 
-**Purpose:** Memrise is a language learning platform that helps users learn new languages through immersive, culturally rich content delivered via native speaker videos, AI-powered conversations, community-created word lists, and story-based reading experiences. The product combines spaced repetition vocabulary learning with authentic cultural context to help learners progress from complete beginners to advanced speakers.
+**Purpose:** Memrise is a language learning platform that helps users learn new languages through immersive, culturally rich content delivered via native speaker videos, AI-powered conversations, community-created word lists, structured reading experiences, and experimental prototype features. The product combines spaced repetition vocabulary learning with authentic cultural context, AI conversation practice, and pronunciation coaching to help learners progress from complete beginners to advanced speakers.
 
 **Target Users:**
 - Casual language learners exploring a new language for travel, fun, or personal enrichment
-- Students preparing for language exams (GCSE, AP, A-Level, IGCSE)
+- Students preparing for language exams (IELTS, GCSE, A-Level, IB, CEFR-aligned)
 - Professionals needing a second language for work or relocation
 - Heritage speakers reconnecting with family languages
 - Self-directed learners who prefer authentic, culturally immersive content over textbook-style drills
 
-**Value Proposition:** Unlike traditional flashcard apps, Memrise immerses learners in real-world language through native speaker videos, AI conversation partners, and culturally grounded stories. The platform offers both structured self-study courses and a newer story-based reading experience, catering to learners at every level across 150+ languages.
+**Value Proposition:** Unlike traditional flashcard apps, Memrise immerses learners in real-world language through native speaker videos, AI conversation partners, pronunciation coaching, and culturally grounded stories. The platform offers structured self-study courses, a comprehensive "Speak" practice hub, an "Explore" discovery area, and experimental prototypes in Memrise Labs, catering to learners at every level across 150+ languages.
 
-**Deployment Model:** Web application (memrise.com / app.memrise.com), with companion mobile apps referenced throughout the product. The platform operates two interconnected products: the **Self-Study App** (classic vocabulary-focused learning) and **Memrise Stories** (narrative-based reading and cultural immersion).
+**Deployment Model:** Web application (memrise.com / app.memrise.com), with companion mobile apps (iOS and Android). The platform has undergone a "Spring Cleaning" reorganization that restructures navigation into four main tabs: Home, Learn, Speak, and Explore, consolidating previously scattered features into a cleaner information architecture.
 
 ---
 
@@ -23,10 +23,13 @@
 
 ### 2.1 Marketing & Landing Page
 
-| Feature | Description |
-|---------|-------------|
-| Landing Page | Public-facing marketing page with product pitch, press mentions (BBC, etc.), testimonials, "How it Works" overview, and call-to-action for signup |
-| Exam Prep Promotion | Marketing section promoting exam preparation capabilities (note: dedicated exam prep page is no longer available as a separate product) |
+| Feature | Description | Status |
+|---------|-------------|--------|
+| Landing Page | Public-facing marketing page with product pitch, "How It Works" carousel, audience personas (Traveler, Student, Professional), testimonials, and call-to-action for signup | **Stable** |
+| Language Catalog | Searchable grid of 150+ languages available for learning, accessible from both marketing and onboarding flows | **Stable** |
+| Exam Prep Promotion | Marketing section promoting IELTS, GCSE, A-Level, IB, and CEFR-aligned exam preparation with AI-powered feedback | **Stable** |
+| Blog | Content marketing blog with language learning tips, cultural insights, and product updates | **Stable** |
+| Phrasebooks | Legacy feature - now redirects to Community Word Lists | **Deprecated** |
 
 ![Landing Page](screenshots/01-landing-page.png)
 
@@ -34,166 +37,125 @@
 
 ### 2.2 Signup & Onboarding
 
-| Feature | Description |
-|---------|-------------|
-| Language Selection | Searchable grid of 150+ languages to learn, including major world languages and constructed/historical languages (Klingon, Latin, Esperanto, etc.) |
-| Account Creation | Email/password registration, or social signup via Facebook and Apple. Password must be 6+ characters |
-| Skill Level Assessment | 4-tier self-assessment: Learn from scratch, Getting started, Making good progress, Improving my skills |
-| Learning Goals | Multi-select goals: Short trip, Moving abroad, Connect with friends & family, Work/school, Fun & brain exercise, Other |
-| Word List Curation | AI-suggested word lists based on goals + browsable community word lists organized by topic |
-| Commitment Selection | Three tiers: Free ("Just curious"), Free 3-day Pro trial ("Ready to get serious"), Go Pro ("I'm all in") |
+| Feature | Description | Status |
+|---------|-------------|--------|
+| Language Selection | Searchable grid of 150+ target languages during signup. Languages displayed with native script names | **Stable** |
+| Account Creation | Email/password signup plus social auth (Google, Facebook, Apple). Interface available in 25+ languages | **Stable** |
+| Skill Level Assessment | 4-level self-assessment: Learn from scratch, Getting started, Making good progress, Improving my skills | **Stable** |
+| Goal Selection | Multi-select learning goals that influence word list recommendations | **Stable** |
+| Word List Curation | System-suggested word lists based on goals, with option to browse community lists | **Stable** |
+| Commitment Selection | Free vs Pro tier selection with 3-day free trial offer; appears once during onboarding | **Stable** |
+| Choose Plan (Onboarding) | Pricing page integrated into onboarding flow showing Monthly, Annual, and Lifetime options | **Stable** |
 
-![Language Selection](screenshots/02-signup-start.png)
+![Signup Page](screenshots/03-signup-page.png)
 
-![Signup Form](screenshots/03-onboarding-signup.png)
+![Language Selection](screenshots/03b-signup-language-selection.png)
 
-![Skill Level Selection](screenshots/05-course-home.png)
+### 2.3 Self-Study App (Core Learning)
 
-![Learning Goals](screenshots/06-onboarding-next.png)
+| Feature | Description | Status |
+|---------|-------------|--------|
+| Dashboard / Home | Central hub showing current word list progress, pronunciation card, immerse (video) card, and quick access to all features. Spring Cleaning layout uses a focused card-based design with current wordlist prominent | **Stable** |
+| Learn Tab (Vocabulary Hub) | Consolidated vocabulary learning hub with current word list, practice/review cards (Classic Review, Speed Review, Difficult Words), Arabic Script card, My Words dashboard card, and Word Lists card | **Stable** |
+| Vocabulary Lessons | Structured lessons presenting new words with native speaker videos, audio pronunciations, literal translations, and cultural "Did you know?" tips. Configurable session sizes (3/5/7/10 words) | **Stable** |
+| Video Quiz Testing | Multiple-choice quizzes using native speaker video clips for recall testing | **Stable** |
+| Vocabulary Management (My Words) | Words tracked across three states: Learned, Heard, Used. Users can review difficult words and create custom word lists | **Stable** |
+| Video Library (Immerse) | Filterable library of native speaker video lessons. Filter by: All, Ready to watch, Watched, Needs practice. Searchable by topic | **Stable** |
+| Practice & Review | Three review modes: Classic Review (spaced repetition), Speed Review (timed rapid-fire), Difficult Words (targeted weak-area practice). Each with configurable session sizes | **Stable** |
+| Streak Tracking | Daily learning streak counter encouraging consistent practice. Streak modal celebrates milestones | **Stable** |
+| My Journey | Progress tracker showing current learning stage with levels, points, and stage progression visualization | **Stable** |
+| My Activities | Activity statistics dashboard showing learning metrics over 7-day and 30-day windows, with per-activity breakdowns | **Stable** |
+| Community Word Lists | Browse thousands of user-created word lists organized by popularity and recency. Users can create, share, and subscribe to lists. Community reporting/flagging for quality control | **Stable** |
+| Upsell Banner | Contextual banner on dashboard promoting Pro upgrade with dynamic pricing and feature highlights | **Stable** |
 
-![Word List Curation](screenshots/07-onboarding-daily-goal.png)
+![Dashboard Home](screenshots/07-dashboard-home.png)
 
-![Commitment Level](screenshots/08-learning-home.png)
+![Vocabulary Learn Tab](screenshots/09-vocabulary-learn.png)
 
-### 2.3 Self-Study App (Classic Memrise)
+![Lesson Word Card](screenshots/13-lesson-word-card.png)
 
-| Feature | Description | Maturity |
-|---------|-------------|----------|
-| Dashboard / Home | Central hub showing current word list, lesson start button, learning journey progress, streak counter, and quick access to all features | **Stable** |
-| Vocabulary Lessons | Structured lessons presenting new words with native speaker videos, audio pronunciations, literal translations, and cultural "Did you know?" tips | **Stable** |
-| Video Quiz Testing | Multiple-choice quizzes using native speaker video clips — users identify what was said | **Stable** |
-| Vocabulary Management | "My Words" section tracking words across three states: Learned, Heard, Used. Create custom word lists or review difficult words | **Stable** |
-| Video Library | Filterable library of native speaker video lessons. Filter by: All, Ready to watch, Watched, Needs practice. Searchable by topic | **Stable** |
-| Conversations (MemBot) | AI-powered chatbot for role-play conversational practice. 150+ scenario-based conversations organized into "Chats" (open-ended) and "Missions" (goal-oriented). Each conversation has a scenario description, goal, and character (e.g., Waiter). Features: per-message audio playback, translate button, like/dislike feedback, edit user messages, hint button, microphone input, and auto-translation of user messages. **Free tier limited to ~10 messages per conversation** | **Stable** |
-| Talk Prep (Beta) | 3-step guided conversation practice: Build (shape conversation), Learn (practice saying lines), Perform (say from memory). Sound Like a Local mode | **Beta** |
-| AI Buddies (Beta) | Six AI-powered practice tools, each with a distinct character/avatar and personality. Offer quick-reply topic suggestions and free-text input. Adapt recommendations based on user's skill level and learned vocabulary: **Assistant** (general guide), **Sentence Builder**, **Pronunciation**, **Grammar** (explains rules with examples, offers quizzes), **Role-Play**, **Conjugation** (focuses on verbs user has encountered, offers "Learn the rule" vs "Do the exercise" paths) | **Beta** |
-| Memrise Labs | Experimental feature hub accessible from the dashboard. Contains 5 beta experiments: **Word Nuggets** (grammar tips, cultural insights, etymology), **Verb Conjugation Practice**, **Virtual Tutor** (AI speaking practice), **Speak for Real** (scenario-based practice from words to full conversation), and **Memrise Stories** (the story reading product) | **Beta** |
-| Community Word Lists | Browse thousands of user-created word lists organized by popularity and recency. Users can create and share their own lists. Community reporting/flagging system for quality control | **Stable** |
-| Streak Tracking | Daily learning streak counter encouraging consistent practice | **Stable** |
-| My Journey | Progress tracker showing current learning stage (Absolute Beginner through Advanced) | **Stable** |
+![Video Quiz](screenshots/14-lesson-video-quiz.png)
 
-![Self-Study Dashboard](screenshots/29-classic-dashboard.png)
+![My Words](screenshots/15-my-words.png)
 
-![Dashboard — Community Word Lists & Memrise Labs](screenshots/49-dashboard-bottom.png)
+![Video Library](screenshots/10-video-library.png)
 
-![Vocabulary Lesson — Word Card](screenshots/39-lesson.png)
+### 2.4 Speak Tab (Conversation & Pronunciation Practice)
 
-![Video Quiz](screenshots/39c-lesson-test.png)
+| Feature | Description | Status |
+|---------|-------------|--------|
+| Speak Hub | Consolidated speaking practice page combining pronunciation exercises and conversation missions. Shows a "not available" banner for unsupported language pairs | **Stable** |
+| Pronunciation Practice | AI-powered pronunciation coaching via a dedicated "Pronunciation Buddy." Provides real-time feedback on spoken words and phrases | **Stable** |
+| Conversation Missions (MemBot) | AI-powered chatbot for role-play conversational practice. 150+ scenario-based conversations organized by topic. Each conversation has a scenario description, goal, and character. Features: per-message audio playback, translate button, like/dislike feedback, edit user messages, hint button, microphone input, and auto-translation | **Stable** |
+| Conversation Recommendations | Personalized mission recommendations based on learning progress, displayed prominently on the Speak page | **New** |
+| Topic Filtering | Filter conversation missions by topic using radio button pills (All, plus topic categories extracted from available missions) | **Stable** |
+| Free Tier Message Limits | Free users limited to approximately 10 messages per conversation session. "Messages left: N" displayed in input field. Pro subscribers have unlimited messages | **Stable** |
 
-![Video Library](screenshots/31-videos.png)
+![Conversations](screenshots/11-conversations.png)
 
-![Conversations — Scenario List](screenshots/32-conversations.png)
+![Conversation Chat](screenshots/16-conversation-chat.png)
 
-![Conversation — Pre-Start Screen](screenshots/45-conversation-chat.png)
+![Conversation Active](screenshots/16b-conversation-active.png)
 
-![Conversation — Active Chat with MemBot](screenshots/45b-conversation-active.png)
+### 2.5 Explore Tab (Discovery & Experimental Features)
 
-![Conversation — Reply with Auto-Translation & Message Limit](screenshots/45c-conversation-reply.png)
+| Feature | Description | Status |
+|---------|-------------|--------|
+| Explore Hub | Discovery page consolidating Labs, Stories, Talk Prep, Skills Check, and AI Buddies into a single grid-based card layout with My Journey and My Activities dashboard cards below | **New** |
+| Memrise Labs | Experimental feature hub with 12+ beta prototypes: Character Writing Practice, Word Nuggets, My Grammar, Verb Conjugation Practice, Virtual Tutor, New Talk Back Mode, Arabic Script, Speak for Real, Interactive English Podcasts, Skills Check, Memrise Stories, and more | **Beta** |
+| Memrise Stories | Story-based reading experience with a 5-step flow: First Read, Discover, Re-read, Check, Score. Separate onboarding with name, language, level, and interest selection. Categories include Food & Markets, Community & Local Life, Traditions & Celebrations | **Beta** |
+| Talk Prep | 3-step guided conversation practice: Build (shape conversation), Learn (practice saying lines), Perform (say from memory). Includes "Sound Like a Local" mode | **Beta** |
+| Skills Check | Exam preparation and English level assessment tool. Covers IELTS, GCSE, A-Level, IB, and CEFR-aligned practice with AI-generated feedback | **Beta** |
+| AI Buddies | Seven+ AI-powered practice tools with distinct characters: Assistant, Sentence Builder, Pronunciation, Grammar, Role-Play, Conjugation, Translator, Culture. Each adapts recommendations based on user's skill level and vocabulary. Pro-gated with token-based access | **Beta** |
+| AI Buddy Dialog | Chat-based interaction with individual AI Buddies. Features title cards, message history, congratulations celebrations, and topic-based quick replies | **Stable** |
 
-![Talk Prep (Beta)](screenshots/33-talk-prep.png)
+![AI Buddies](screenshots/12-ai-buddies.png)
 
-![AI Buddies — Selection Menu](screenshots/34-ai-buddies.png)
+![AI Buddy Grammar](screenshots/17-ai-buddy-grammar.png)
 
-![AI Buddy — Grammar (Loaded with Topic Suggestions)](screenshots/46b-ai-buddy-grammar-loaded.png)
+![AI Buddy Exercise](screenshots/17b-ai-buddy-exercise.png)
 
-![AI Buddy — Grammar Exercise](screenshots/46c-ai-buddy-grammar-exercise.png)
+![AI Buddy Conjugation](screenshots/18-ai-buddy-conjugation.png)
 
-![AI Buddy — Conjugation (Adaptive to Skill Level)](screenshots/47-ai-buddy-conjugation.png)
+![Talk Prep](screenshots/19-talk-prep.png)
 
-![Memrise Labs](screenshots/50-memrise-labs.png)
+![Memrise Labs](screenshots/20-memrise-labs.png)
 
-![Vocabulary Management](screenshots/30-vocabulary.png)
+### 2.6 Monetisation & Pricing
 
-![My Words](screenshots/41-my-words.png)
+| Feature | Description | Status |
+|---------|-------------|--------|
+| Pro Lifetime | €76.50 one-time (70% off from €254.99) - marked as "BEST VALUE" | **Stable** |
+| Pro Annual | €69.99/year (€0.20/day) - marked as "SAVE 73%" | **Stable** |
+| Pro Monthly | €21.99/month (€0.74/day) - flexible, cancel anytime | **Stable** |
+| Pro Features | Extra word lists, ad-free experience, all native speaker videos, unlimited pronunciation practice, unlimited sentence building, unlimited AI conversations, grammar lessons, verb conjugation drills, extra role-play sessions, cultural & language tips, AI-powered word list generation | **Stable** |
+| Feature Upsell Modal | Contextual modal shown when free users hit usage limits on gated features (videos, conversations, review modes, buddy types, wordlist AI generation) | **Stable** |
+| Soft Sell Screen | Non-intrusive promotional screen highlighting Pro benefits at key moments | **Stable** |
+| Free Trial | 3-day free Pro trial offered during onboarding commitment step. Trial started/expired modals manage the trial lifecycle | **Stable** |
 
-![Community Word Lists](screenshots/43-browse-community.png)
+![Pricing Page](screenshots/04-pricing-page.png)
 
-### 2.4 Memrise Stories
+![Pricing Page Full](screenshots/04b-pricing-page-full.png)
 
-| Feature | Description | Maturity |
-|---------|-------------|----------|
-| Stories Onboarding | Separate 4-step onboarding: Name entry, Language selection (Spanish/French/English), Level (Beginner/Intermediate/Advanced), Interest selection from 10 categories | **Beta** |
-| Stories Home | Personalized dashboard showing reading stats (stories reading, read once, total re-reads), recommended stories, and navigation | **Beta** |
-| Story Library | Categorized collection of culturally immersive stories (Food & Markets, Community & Local Life, Traditions & Celebrations) with metadata: type (Short story, Scene, True story), reading time, and origin. All stories are entirely human-authored | **Beta** |
-| 5-Step Reading Flow | Structured reading experience: 1) First Read (unassisted), 2) Discover (vocabulary, phrases, cultural insights), 3) Re-read (bilingual view), 4) Check (sentence reordering exercise), 5) Score (self-assessment) | **Beta** |
-| Tap-to-Translate | Tappable words within stories that reveal translations on demand | **Beta** |
-| Audio Playback | Story narration with normal and slow-speed (turtle icon) playback | **Beta** |
-| Vocabulary Discovery | Post-reading breakdown into Key Phrases, Slang & Vocabulary, and Cultural Insights with "Save to Notebook" option | **Beta** |
-| Bilingual Re-read | Side-by-side Spanish/English view with toggle to hide all translations | **Beta** |
-| Story Order Exercise | Drag-and-drop sentence reordering comprehension check | **Beta** |
-| Self-Assessment | Dual rating system: comprehension level (Lost → Crystal clear) and enjoyment (Loved it / Interesting / Not for me) plus difficulty rating | **Beta** |
-| Notebook | Personal reference with 5 tabs: Words, Phrases, Cultural insights, Notes, Journal | **Beta** |
-| Create Your Own Stories | User-generated story creation capability (shown in library footer) | **Beta** |
-| Your Growth | Learning progress tracking | **Coming Soon** (next quarter) |
-| Practice | Dedicated practice mode for review | **Coming Soon** (next quarter) |
+### 2.7 Account & Settings
 
-![Stories Onboarding — Name](screenshots/10-stories-home.png)
+| Feature | Description | Status |
+|---------|-------------|--------|
+| Sign In | Email/password plus social auth (Google, Facebook, Apple). "Forgot password" recovery flow | **Stable** |
+| Profile Settings | Username and email management | **Stable** |
+| Password Management | Separate password change interface | **Stable** |
+| Learning Settings | Per-language configuration: skill level, streak management, words per session (Learning: 3/5/7/10, Review: 5/10/15/25/50, Speed Review: 10/25/50/100/150, Difficult Words: 5/10/15/20) | **Stable** |
+| Test Type Preferences | Toggle controls for: Arrange the words tests, Typing tests, Prioritise typing in review, Audio tests | **Stable** |
+| Delete Account | Account deletion with permanent data removal warning | **Stable** |
+| Download Personal Data | GDPR-compliant personal data export | **Stable** |
+| Stories Settings | Name, language, level, and interest preferences for the Stories product | **Stable** |
+| Language Switcher | Top-bar dropdown to switch between active languages. Saving last used language pair to local storage | **Stable** |
 
-![Stories Onboarding — Language](screenshots/11-stories-onboarding-step2.png)
+![Sign In](screenshots/02-signin-page.png)
 
-![Stories Onboarding — Level](screenshots/12-stories-onboarding-step3.png)
+![Profile Settings](screenshots/22-profile-settings.png)
 
-![Stories Onboarding — Interests](screenshots/13-stories-onboarding-step4.png)
-
-![Stories Dashboard](screenshots/14-stories-dashboard.png)
-
-![Story Detail & Prediction](screenshots/15-story-detail.png)
-
-![First Read](screenshots/16-story-reading.png)
-
-![Story Text with Tappable Words](screenshots/16b-story-text.png)
-
-![Rate & Review](screenshots/17-story-rate-review.png)
-
-![Discover — Overview](screenshots/18-story-discover.png)
-
-![Discover — Key Phrases](screenshots/18b-discover-key-phrases.png)
-
-![Discover — Cultural Insights](screenshots/18c-discover-cultural.png)
-
-![Bilingual Re-read](screenshots/19-story-reread.png)
-
-![Story Order Exercise](screenshots/20-story-check.png)
-
-![Post-Story Score](screenshots/21-story-score.png)
-
-![Story Completion Summary](screenshots/22-story-complete.png)
-
-![Stories Library](screenshots/23-stories-library.png)
-
-![Notebook](screenshots/24-notebook.png)
-
-### 2.5 Monetization & Pricing
-
-| Feature | Description |
-|---------|-------------|
-| Free Tier | Access to all languages, basic lessons, targeted word lists |
-| Pro Monthly | €21.99/month — full access to all Pro features |
-| Pro Annual | €69.99/year (€5.84/month) — marked as "Most Popular" |
-| Pro Lifetime | €127.49 one-time (50% off from €254.99) |
-| Pro Features | Extra word lists, ad-free experience, all native speaker videos, unlimited pronunciation practice, unlimited sentence building, unlimited AI conversations, grammar lessons, verb conjugation drills, extra role-play sessions, cultural & language tips |
-
-![Pricing Comparison](screenshots/38-pricing.png)
-
-![Full Pricing Page](screenshots/38b-pricing-full.png)
-
-### 2.6 Account & Settings
-
-| Feature | Description |
-|---------|-------------|
-| Profile Settings | Username and email management |
-| Password Management | Separate password change interface |
-| Learning Settings | Per-language configuration: skill level, streak management, words per session (Learning: 3/5/7/10, Review: 5/10/15/25/50, Speed Review: 10/25/50/100/150, Difficult Words: 5/10/15/20) |
-| Test Type Preferences | Toggle controls for: Arrange the words tests, Typing tests, Prioritise typing in review, Audio tests |
-| Delete Account | Account deletion with permanent data removal warning |
-| Download Personal Data | GDPR-compliant personal data export |
-| Stories Settings | Name, language, level, and interest preferences for the Stories product |
-
-![Profile Settings](screenshots/36-profile-settings.png)
-
-![Learning Settings](screenshots/37b-learning-settings-full.png)
-
-![Stories Settings](screenshots/27b-settings-full.png)
+![Learning Settings](screenshots/23-learning-settings.png)
 
 ---
 
@@ -201,9 +163,9 @@
 
 ### Casual Learner
 - As a **casual learner**, I want to pick a language and start learning immediately, so that I can begin without any commitment or payment
-- As a **casual learner**, I want to read culturally immersive stories in my target language, so that I can learn language in a meaningful context rather than isolated vocabulary
+- As a **casual learner**, I want to explore different learning activities (videos, conversations, stories) in one place, so that I can find what suits my learning style
 - As a **casual learner**, I want to tap on words I don't know to see translations, so that I can learn at my own pace without frustration
-- As a **casual learner**, I want to choose topics that interest me (food, humour, everyday life), so that I stay engaged with content I care about
+- As a **casual learner**, I want to see my daily streak grow, so that I feel motivated to return every day
 
 ### Committed Student
 - As a **committed student**, I want to track my daily streak, so that I stay motivated to practice consistently
@@ -211,25 +173,30 @@
 - As a **committed student**, I want to review difficult words separately, so that I can focus on areas where I struggle
 - As a **committed student**, I want to practice conversations with an AI chatbot, so that I can build speaking confidence in a low-pressure environment
 - As a **committed student**, I want to practice verb conjugations and grammar with AI Buddies, so that I can strengthen specific weak areas
+- As a **committed student**, I want to see my learning statistics over time, so that I can track my improvement
 
 ### Exam Preparer
+- As an **exam preparer**, I want to take practice tests under real exam conditions, so that I feel confident before the real thing
+- As an **exam preparer**, I want to receive AI-generated feedback on my practice, so that I know how to improve my grade
 - As an **exam preparer**, I want to find community word lists specific to my exam (GCSE, AP, A-Level), so that I study the exact vocabulary I'll be tested on
 - As an **exam preparer**, I want to toggle typing tests on or off, so that I can practice the format my exam requires
-- As an **exam preparer**, I want to create my own word lists, so that I can organize vocabulary by exam topic or unit
 
 ### Travel Learner
 - As a **travel learner**, I want curated "Travel Essentials" word lists, so that I learn the most useful phrases for my trip
 - As a **travel learner**, I want to hear multiple native speakers say each phrase, so that I can understand different accents and speaking styles
 - As a **travel learner**, I want cultural insights alongside vocabulary, so that I understand the cultural context behind what I'm learning
+- As a **travel learner**, I want to practice real-world conversation scenarios (ordering food, asking directions), so that I can handle common situations
 
 ### Content Creator
 - As a **community member**, I want to create and share word lists, so that other learners can benefit from my knowledge
 - As a **community member**, I want to browse popular and recently created word lists, so that I can find high-quality study materials
+- As a **community member**, I want to use AI to bulk-generate word entries for my custom lists, so that I can create content more efficiently (Pro feature)
 
 ### Pro Subscriber
 - As a **Pro subscriber**, I want ad-free learning, so that I can focus without interruptions
-- As a **Pro subscriber**, I want unlimited AI conversation practice, so that I can practice speaking as much as I want
+- As a **Pro subscriber**, I want unlimited AI conversation and pronunciation practice, so that I can practice speaking as much as I want
 - As a **Pro subscriber**, I want access to all native speaker videos, so that I get the full immersive experience
+- As a **Pro subscriber**, I want unlimited access to all AI Buddies, so that I can use grammar, conjugation, translation, and cultural coaching without limits
 
 ---
 
@@ -237,19 +204,19 @@
 
 | ID | Requirement |
 |----|-------------|
-| FR-1 | The system shall allow users to create accounts using email/password, Facebook, or Apple authentication |
-| FR-2 | The system shall support learning 150+ languages from multiple source languages |
+| FR-1 | The system shall allow users to create accounts using email/password, Google, Facebook, or Apple authentication |
+| FR-2 | The system shall support learning 150+ languages from multiple source languages (25+ interface languages available) |
 | FR-3 | The system shall present a 4-level skill assessment during onboarding and allow changes later in settings |
 | FR-4 | The system shall generate personalized word list recommendations based on the user's stated goals and skill level |
 | FR-5 | The system shall deliver vocabulary lessons that include native speaker video clips, multiple audio pronunciations, literal translations, and cultural context tips |
 | FR-6 | The system shall test vocabulary recall through multiple-choice quizzes using video clips of native speakers |
 | FR-7 | The system shall track words across three progression states: Learned, Heard, and Used |
-| FR-8 | The system shall maintain a daily learning streak counter that resets if a day is missed |
+| FR-8 | The system shall maintain a daily learning streak counter that resets if a day is missed, with a celebration modal on milestones |
 | FR-9 | The system shall allow users to mark words as "difficult" for targeted review |
-| FR-10 | The system shall provide a video library filterable by watch status (All, Ready to watch, Watched, Needs practice) |
-| FR-11 | The system shall offer AI-powered conversational practice (MemBot) with 150+ scenario-based conversation topics |
-| FR-12 | The system shall provide Talk Prep with a 3-step conversation rehearsal flow: Build, Learn, Perform |
-| FR-13 | The system shall provide six AI Buddy tools: Assistant, Sentence Builder, Pronunciation, Grammar, Role-Play, and Conjugation |
+| FR-10 | The system shall provide a video library filterable by watch status (All, Ready to watch, Watched, Needs practice) with search |
+| FR-11 | The system shall offer AI-powered conversational practice (MemBot) with 150+ scenario-based conversation topics organized by theme |
+| FR-12 | The system shall provide a Speak hub combining pronunciation practice and conversation missions with personalized recommendations |
+| FR-13 | The system shall provide seven+ AI Buddy tools: Assistant, Sentence Builder, Pronunciation, Grammar, Role-Play, Conjugation, Translator, and Culture |
 | FR-14 | The system shall allow users to browse, search, create, and subscribe to community-created word lists |
 | FR-15 | The system shall present stories in a 5-step reading flow: First Read, Discover, Re-read, Check, Score |
 | FR-16 | The system shall provide tap-to-translate functionality on individual words within stories |
@@ -259,22 +226,27 @@
 | FR-20 | The system shall provide a bilingual re-read mode with a toggle to hide translations |
 | FR-21 | The system shall test comprehension through sentence reordering exercises |
 | FR-22 | The system shall collect self-assessment ratings for comprehension level, enjoyment, and difficulty after each story |
-| FR-23 | The system shall organize stories by category (Food & Markets, Community & Local Life, Traditions & Celebrations) and metadata (type, reading time, origin country) |
+| FR-23 | The system shall organize stories by category and metadata (type, reading time, origin country) |
 | FR-24 | The system shall offer configurable session sizes for Learning (3/5/7/10), Review (5/10/15/25/50), Speed Review (10/25/50/100/150), and Difficult Words (5/10/15/20) |
 | FR-25 | The system shall allow users to toggle test types: Arrange words, Typing, Prioritised typing in review, and Audio tests |
-| FR-26 | The system shall support three subscription tiers: Monthly (€21.99), Annual (€69.99/yr), and Lifetime (€127.49) |
-| FR-27 | The system shall gate Pro features (extra word lists, ad-free, all videos, unlimited AI practice, grammar, conjugation, role-play, cultural tips) behind the paid subscription |
+| FR-26 | The system shall support three subscription tiers: Monthly (€21.99), Annual (€69.99/yr), and Lifetime (€76.50, 70% off from €254.99) |
+| FR-27 | The system shall gate Pro features behind the paid subscription with per-feature token-based access controls |
 | FR-28 | The system shall allow account deletion with a permanent data removal warning |
 | FR-29 | The system shall provide GDPR-compliant personal data download |
 | FR-30 | The system shall support per-language learning settings (each language can have its own skill level, session sizes, and test preferences) |
-| FR-31 | The system shall enforce message limits on free-tier AI conversations (approximately 10 messages per conversation session), displaying remaining count in the input field |
-| FR-32 | The system shall auto-translate user messages in conversations (showing English translation below Spanish input) |
+| FR-31 | The system shall enforce message limits on free-tier AI conversations, displaying remaining count in the input field |
+| FR-32 | The system shall auto-translate user messages in conversations (showing translation below the original input) |
 | FR-33 | The system shall allow users to edit sent messages in conversations |
 | FR-34 | The system shall provide per-message audio playback, translation, and like/dislike feedback in AI conversations |
 | FR-35 | The system shall offer quick-reply topic suggestions in AI Buddy interactions that adapt based on the user's current skill level and vocabulary |
-| FR-36 | The system shall provide a Memrise Labs hub showcasing beta experiments (Word Nuggets, Verb Conjugation Practice, Virtual Tutor, Speak for Real, Memrise Stories) |
+| FR-36 | The system shall provide a Memrise Labs hub showcasing beta experiments with language-pair-aware filtering |
 | FR-37 | The system shall provide a "Hint" button in conversations to help users formulate responses when stuck |
-| FR-38 | The system shall support sidebar navigation that adapts by language — features like Talk Prep, AI Buddies, and Stories appear only for languages that support them |
+| FR-38 | The system shall provide sidebar navigation that adapts by language and user state, with features appearing only for supported language pairs |
+| FR-39 | The system shall provide an Explore hub consolidating discovery features (Labs, Stories, Talk Prep, Skills Check, AI Buddies) into a card-based layout |
+| FR-40 | The system shall provide conversation recommendations on the Speak page based on user's learning progress |
+| FR-41 | The system shall provide exam preparation with practice tests and AI-generated performance feedback |
+| FR-42 | The system shall support AI-powered bulk word generation for custom word lists (Pro feature) |
+| FR-43 | The system shall display a Pro trial started/expired modal to manage the trial lifecycle |
 
 ---
 
@@ -283,67 +255,77 @@
 | ID | Rule |
 |----|------|
 | BR-1 | **Password Policy:** Passwords must be 6 or more characters |
-| BR-2 | **Free vs Pro Gating:** Free users have access to all languages, basic lessons, and targeted word lists. Pro features (extra word lists, ad-free, all videos, unlimited AI, grammar, conjugation, role-play, cultural tips) require a paid subscription |
-| BR-3 | **Streak Calculation:** Streaks increment by one for each consecutive day of learning activity. Missing a day resets the streak to zero. Users can manually override their streak count in Learning Settings |
+| BR-2 | **Free vs Pro Gating:** Free users have access to all languages, basic lessons, and targeted word lists. Pro features (extra word lists, ad-free, all videos, unlimited AI, grammar, conjugation, role-play, translator, culture buddy, AI word list generation) require a paid subscription |
+| BR-3 | **Streak Calculation:** Streaks increment by one for each consecutive day of learning activity (watching a video, practicing a conversation, learning or reviewing words). Missing a day resets the streak to zero. Users can manually override their streak count in Learning Settings |
 | BR-4 | **Skill Level Mapping:** Users self-assess into one of four levels, which determines course starting points and content recommendations. Levels can be changed at any time in settings |
-| BR-5 | **Stories Progression:** Stories follow a mandatory sequential flow (Read → Discover → Re-read → Check → Score). Users cannot skip ahead but can skip the Check exercise |
+| BR-5 | **Stories Progression:** Stories follow a mandatory sequential flow (Read, Discover, Re-read, Check, Score). Users cannot skip ahead but can skip the Check exercise |
 | BR-6 | **Story Comprehension Tracking:** Post-reading self-assessments feed into a comprehension progress metric displayed on the story completion summary |
-| BR-7 | **Word List Subscriptions:** Users can subscribe to multiple word lists simultaneously. The "Selected Word Lists" count is shown during onboarding |
+| BR-7 | **Word List Subscriptions:** Users can subscribe to multiple word lists simultaneously. The current active word list is prominently displayed on the Home and Learn tabs |
 | BR-8 | **Commitment Screen Sequencing:** The commitment/pricing screen appears only once during initial onboarding, after word list selection |
 | BR-9 | **Per-Language Settings:** All learning settings (skill level, session sizes, test preferences) apply only to the currently selected language |
 | BR-10 | **Community Word Lists:** Any user can create word lists. Lists are publicly browsable and sortable by popularity and creation date |
 | BR-11 | **Notebook Persistence:** Items saved to the Notebook persist across sessions and are organized into Words, Phrases, Cultural insights, Notes, and Journal tabs |
 | BR-12 | **Stories Interest-Based Curation:** Story recommendations are personalized based on the user's selected interest categories (up to 10 topics) |
 | BR-13 | **Trial Offer:** New users are offered a free 3-day Pro trial during the commitment selection step |
-| BR-14 | **Multi-Language Support:** Users can learn multiple languages on a single account. The language selector in the top bar allows switching between active languages |
+| BR-14 | **Multi-Language Support:** Users can learn multiple languages on a single account. The language selector in the top bar allows switching between active languages, with the last-used pair saved to local storage |
 | BR-15 | **Account Deletion:** Account deletion is permanent and irreversible. All learning progress is removed |
 | BR-16 | **Free Tier Conversation Limits:** Free users are limited to approximately 10 messages per AI conversation session, displayed as "Messages left: N" in the input field. Pro subscribers have unlimited messages |
-| BR-17 | **Language-Dependent Features:** The sidebar navigation adapts based on the selected language. Features like Talk Prep, AI Buddies, and Stories are only available for select languages (e.g., Spanish) and do not appear for others (e.g., Japanese) |
-| BR-18 | **Phrasebooks Deprecated:** The former Phrasebook pages now redirect to a "Community Word Lists" page, confirming this feature has been folded into the Community Word Lists experience |
-| BR-19 | **AI Buddy Skill Adaptation:** AI Buddies personalize their recommendations based on the user's self-assessed skill level and vocabulary they have previously learned, ensuring practice is contextually relevant |
+| BR-17 | **Language-Dependent Features:** Navigation adapts based on selected language. In Spring Cleaning mode: Speak tab shows only if pronunciation or conversations are supported; Explore tab always shows; specific features (Stories, Talk Prep, Skills Check) appear only for qualifying language pairs |
+| BR-18 | **Phrasebooks Deprecated:** Former Phrasebook pages redirect to Community Word Lists |
+| BR-19 | **AI Buddy Skill Adaptation:** AI Buddies personalize their recommendations based on the user's self-assessed skill level and vocabulary they have previously learned |
+| BR-20 | **Token-Based Feature Gating:** Pro features use a token-based availability system. Each feature type (videos, conversations, review modes, buddy types, pronunciation, AI word generation) has independent availability checks |
+| BR-21 | **Spring Cleaning Navigation:** All users now see the Spring Cleaning layout (threshold is userId > 0, meaning all users). Navigation tabs are: Home, Learn, Speak, Explore. Videos tab appears only for non-Spring Cleaning users or those on the 2024 experience |
+| BR-22 | **Labs Language Filtering:** Labs prototypes are shown/hidden based on the user's source and target language combination. Only production-ready prototypes are shown in the live environment |
+| BR-23 | **Exam Prep Integration:** Exam Prep is delivered via a separate embedded application (Kotlin-based), not through the main web client SPA |
 
 ---
 
 ## 6. Domain Concepts
 
 ### User
-A person who has created an account on Memrise. Users have a username, email, and password. They can learn multiple languages simultaneously, each with independent progress and settings.
+A person who has created an account on Memrise. Users have a username, email, and password (or social auth credentials). They can learn multiple languages simultaneously, each with independent progress and settings. Users have an experience type (2024 or 2025) that determines their interface layout.
 
-### Language
-A target language the user is learning (e.g., Spanish, French, Korean). Each language has its own course content, community word lists, videos, and conversation scenarios. Settings like skill level and session size are configured per language.
+### Language Pair
+The combination of a user's native language (source) and the language they are learning (target). Each language pair has its own eligibility settings determining which features are available (AI Buddies, Conversations, Videos, etc.).
 
 ### Skill Level
-A self-assessed proficiency tier that determines content difficulty and starting points. Four levels exist: Learn from scratch, Getting started, Making good progress, Improving my skills. In the Stories product, three levels are used: Beginner, Intermediate, Advanced.
+A self-assessed proficiency tier that determines content difficulty and starting points. Four levels exist in the core app: Learn from scratch, Getting started, Making good progress, Improving my skills. In the Stories product, three levels are used: Beginner, Intermediate, Advanced.
 
 ### Word List
-A curated collection of vocabulary items. Word lists can be official (created by Memrise, e.g., "Travel Essentials"), community-created (by other users), or personal (created by the individual user). Each word list has a title, description, word count, and creator.
+A curated collection of vocabulary items. Word lists can be official (created by Memrise), community-created (by other users), or personal (created by the individual user). Each word list has a title, description, word count, and creator. Users can have one "current" active word list at a time.
 
 ### Lesson
 A structured learning session that presents a configurable number of new vocabulary items. Each word in a lesson includes a native speaker video, audio pronunciations, English translation, literal translation, and a cultural "Did you know?" tip. Lessons conclude with quiz testing.
 
 ### Story
-A culturally immersive reading piece in the target language. Stories are categorized by theme (Food & Markets, Community & Local Life, etc.), tagged with metadata (type, reading time, origin country), and processed through a 5-step reading flow. Stories contain Key Phrases, Slang & Vocabulary, and Cultural Insights.
+A culturally immersive reading piece in the target language. Stories are categorized by theme, tagged with metadata (type, reading time, origin country), and processed through a 5-step reading flow. Stories contain Key Phrases, Slang & Vocabulary, and Cultural Insights.
 
 ### Notebook
 A personal reference collection where users save vocabulary, phrases, cultural insights, and personal notes discovered during story reading. The Notebook also includes a Journal for reflective writing.
 
 ### Streak
-A consecutive-day learning counter that incentivizes daily practice. Streaks reset to zero on a missed day but can be manually adjusted in settings.
+A consecutive-day learning counter that incentivizes daily practice. Streaks reset to zero on a missed day but can be manually adjusted in settings. A celebration modal appears when streaks grow.
 
-### Conversation
-An AI-powered dialogue scenario using the MemBot chatbot. Conversations are categorized as "Chats" (open-ended discussions) or "Missions" (goal-oriented tasks like ordering food or booking a hotel).
+### Conversation (Mission)
+An AI-powered dialogue scenario using the MemBot chatbot. Conversations are organized by topic and can be filtered. Each has a scenario description, goal, and AI character. Conversations support text and voice input.
 
 ### AI Buddy
-A specialized AI practice tool focused on a specific language skill. Six types exist: Assistant (general guide), Sentence Builder, Pronunciation, Grammar, Role-Play, and Conjugation.
+A specialized AI practice tool focused on a specific language skill. Seven+ types exist: Assistant, Sentence Builder, Pronunciation, Grammar, Role-Play, Conjugation, Translator, and Culture. Each has a distinct personality and avatar.
 
 ### Talk Prep
-A guided conversation rehearsal feature with three stages: Build (shape the conversation content), Learn (practice saying the lines), and Perform (recite from memory).
+A guided conversation rehearsal feature with three stages: Build (shape the conversation content), Learn (practice saying the lines), and Perform (recite from memory). Includes a "Sound Like a Local" mode.
 
 ### Pro Subscription
-A paid membership tier that unlocks premium features. Available in Monthly, Annual, and Lifetime pricing. Pro features include ad-free experience, all native speaker videos, unlimited AI practice, grammar lessons, and more.
+A paid membership tier that unlocks premium features. Available in Monthly, Annual, and Lifetime pricing. Pro features are controlled via a token-based system where each feature type has independent access controls.
 
-### Community
-The collective of Memrise users who create and share word lists. The Community Word Lists section allows browsing by popularity and recency, with search functionality.
+### Eligibility
+A per-language-pair configuration that determines which features are available for a given learning combination. Controls access to AI Buddies, Conversations, Videos, and other language-dependent features.
+
+### Labs Prototype
+An experimental feature hosted externally (typically on Replit) and linked from the Memrise Labs hub. Each prototype has language pair requirements, production readiness status, and localized links.
+
+### Points & Levels
+A gamification system where users earn points through learning activities. Points contribute to level progression through numbered stages (visualized as a journey map). Level and stage celebrations mark milestones.
 
 ---
 
@@ -354,142 +336,156 @@ The collective of Memrise users who create and share word lists. The Community W
 1. User arrives at the landing page (memrise.com)
    ![Landing Page](screenshots/01-landing-page.png)
 
-2. User clicks "Start Learning"
+2. User clicks "Start Learning" or navigates to app.memrise.com/bienvenue
 
 3. User selects the language they want to learn from a searchable grid of 150+ languages
-   ![Language Selection](screenshots/02-signup-start.png)
+   ![Language Selection](screenshots/03b-signup-language-selection.png)
 
-4. User creates an account with email/password or social login
-   ![Signup Form](screenshots/03-onboarding-signup.png)
+4. User creates an account with email/password or social login (Google, Facebook, Apple)
+   ![Signup](screenshots/03-signup-page.png)
 
 5. User selects their current skill level (4 options from beginner to advanced)
-   ![Skill Level](screenshots/05-course-home.png)
 
 6. User selects their learning goals (multi-select from 6 options)
-   ![Learning Goals](screenshots/06-onboarding-next.png)
 
 7. System suggests word lists based on goals; user can add community lists
-   ![Word List Curation](screenshots/07-onboarding-daily-goal.png)
 
-8. User selects their commitment level (Free, Trial, or Pro)
-   ![Commitment Selection](screenshots/08-learning-home.png)
+8. User sees the commitment/pricing page (Free, Trial, or Pro)
+   ![Pricing](screenshots/04-pricing-page.png)
 
-9. User arrives at the Self-Study Dashboard, ready to start their first lesson
-   ![Dashboard](screenshots/29-classic-dashboard.png)
+9. User arrives at the Home Dashboard, ready to start their first lesson
+   ![Dashboard](screenshots/07-dashboard-home.png)
 
-### 7.2 Vocabulary Lesson Flow
+### 7.2 Home Dashboard (Spring Cleaning)
 
-1. User clicks "Start lesson" from the dashboard
+1. User lands on the Home tab showing their current word list with progress and a "Start lesson" button
+   ![Dashboard Home](screenshots/07-dashboard-home.png)
 
-2. System presents a new word with native speaker video, translation, audio variants, and a cultural tip
-   ![Word Presentation](screenshots/39-lesson.png)
+2. Below the word list card, contextual cards appear:
+   - Immerse card (if videos are available for the language pair)
+   - Pronunciation card (if pronunciation buddy is available)
 
-3. User can play the video, listen to multiple audio clips, read the "Did you know?" section, or click "I already know this" to skip
+3. An Upsell Banner at the top promotes Pro for non-subscribers
 
-4. After learning 3-10 new words (configurable), quiz testing begins
+4. The sidebar shows: Home, Learn, Speak, Explore (adapting to language pair eligibility)
 
-5. System presents video-based multiple choice quizzes
-   ![Video Quiz](screenshots/39c-lesson-test.png)
+### 7.3 Vocabulary Learning Flow (Learn Tab)
 
-6. User selects an answer or clicks "I don't know"
+1. User navigates to the Learn tab
+
+2. The Learn tab shows the current active word list with lesson progress
+
+3. Below the word list: Practice & Review cards (Classic Review, Speed Review, Difficult Words)
+
+4. Further below: Arabic Script card (if learning Arabic), My Words dashboard card, Word Lists card
+
+5. User clicks "Start lesson" and the system presents new words with video, audio, and cultural context
+   ![Lesson](screenshots/13-lesson-word-card.png)
+
+6. After learning the configured number of words, video quiz testing begins
+   ![Quiz](screenshots/14-lesson-video-quiz.png)
 
 7. Upon completion, learned words are added to "My Words" and the progress bar advances
 
-### 7.3 Story Reading Flow
+### 7.4 Speak Tab Flow
 
-1. User navigates to Stories and selects a story from the library
-   ![Stories Library](screenshots/23-stories-library.png)
+1. User navigates to the Speak tab
 
-2. Story detail page shows preview text with tap-to-translate, metadata, and a comprehension prediction quiz
-   ![Story Detail](screenshots/15-story-detail.png)
+2. If pronunciation buddy is available, a Pronunciation Card appears at the top
 
-3. **Stage 1 — First Read:** User reads the story in the target language without help. Audio playback available at normal and slow speed
-   ![First Read](screenshots/16-story-reading.png)
+3. Below: Conversation Recommendations (AI-picked missions based on learning progress)
 
-4. User clicks "I've finished reading" and rates their comprehension, enjoyment, and difficulty
-   ![Rate & Review](screenshots/17-story-rate-review.png)
+4. Topic filter pills allow filtering missions by category (All, plus available topics)
 
-5. **Stage 2 — Discover:** System breaks down vocabulary into Key Phrases, Slang & Vocabulary, and Cultural Insights. User can save items to Notebook
-   ![Discover](screenshots/18-story-discover.png)
-   ![Key Phrases](screenshots/18b-discover-key-phrases.png)
-   ![Cultural Insights](screenshots/18c-discover-cultural.png)
+5. Mission cards grid shows available conversation scenarios with thumbnails and descriptions
 
-6. **Stage 3 — Re-read:** Bilingual view with translations below each sentence. Toggle to hide translations
-   ![Bilingual Re-read](screenshots/19-story-reread.png)
+6. User selects a mission and sees the preview screen with scenario description and goal
 
-7. **Stage 4 — Check:** Sentence reordering exercise to test comprehension
-   ![Story Order](screenshots/20-story-check.png)
+7. User clicks "Start conversation" and engages with the AI chatbot
+   ![Conversation](screenshots/16-conversation-chat.png)
 
-8. **Stage 5 — Score:** Final self-assessment of comprehension
-   ![Score](screenshots/21-story-score.png)
+8. If speaking is not supported for the language pair, a "Speaking practice not available" banner is shown
 
-9. Completion summary shows stats and recommends next story or practice activities
-   ![Completion](screenshots/22-story-complete.png)
+### 7.5 Explore Tab Flow
 
-### 7.4 Stories Onboarding Flow (First-Time Stories User)
+1. User navigates to the Explore tab
 
-1. User enters the Stories product and sees the welcome page
-   ![Stories Welcome](screenshots/09-learning-dashboard.png)
+2. Card grid shows available discovery features:
+   - Memrise Labs card
+   - Stories card (if supported for language pair)
+   - Talk Prep card (if supported)
+   - Skills Check card (if supported)
+   - AI Buddies card (if supported)
 
-2. Step 1: User enters their display name
-   ![Name Entry](screenshots/10-stories-home.png)
+3. Below the cards: My Journey dashboard card and My Activities dashboard card
 
-3. Step 2: User selects their language (Spanish, French, or English)
-   ![Language Selection](screenshots/11-stories-onboarding-step2.png)
+4. Clicking Labs opens the full Labs page with all available prototypes
 
-4. Step 3: User selects their level (Beginner, Intermediate, Advanced)
-   ![Level Selection](screenshots/12-stories-onboarding-step3.png)
-
-5. Step 4: User selects interest categories from 10 options (Food & markets, Family & traditions, Local customs, etc.)
-   ![Interest Selection](screenshots/13-stories-onboarding-step4.png)
-
-6. User arrives at the personalized Stories Dashboard
-   ![Stories Dashboard](screenshots/14-stories-dashboard.png)
-
-### 7.5 AI Conversation Flow
-
-1. User navigates to Conversations and selects a scenario (e.g., "Getting a table at a restaurant")
-
-2. Pre-start screen shows the scenario description and goal
-   ![Conversation Pre-Start](screenshots/45-conversation-chat.png)
-
-3. User clicks "Start conversation" — the MemBot character opens with a message in the target language, with audio playback
-   ![Active Conversation](screenshots/45b-conversation-active.png)
-
-4. User types a response in the target language (or English). System auto-translates the message below in grey
-   ![Conversation Reply](screenshots/45c-conversation-reply.png)
-
-5. MemBot responds in character, staying in the target language. Each message has Audio, Translate, Like/Dislike controls
-
-6. "Messages left: N" counter decrements with each exchange (free tier only)
-
-7. Conversation ends when the goal is achieved or messages run out
+5. Clicking Stories, Talk Prep, or Skills Check opens the respective external Replit-based app
+   ![Memrise Labs](screenshots/20-memrise-labs.png)
 
 ### 7.6 AI Buddy Interaction Flow
 
-1. User navigates to AI Buddies and selects a practice type (Grammar, Conjugation, etc.)
-   ![AI Buddies Selection](screenshots/34-ai-buddies.png)
+1. User navigates to AI Buddies (via Explore tab or direct URL /buddies)
+   ![AI Buddies](screenshots/12-ai-buddies.png)
 
-2. The AI Buddy introduces itself and offers topic suggestions tailored to the user's vocabulary
-   ![Grammar Buddy](screenshots/46b-ai-buddy-grammar-loaded.png)
+2. User selects a practice type (Grammar, Conjugation, Pronunciation, etc.)
 
-3. User selects a quick-reply topic or types a custom request
+3. If the buddy type is Pro-gated and user is on free tier, a Feature Upsell Modal appears
 
-4. The Buddy provides an explanation with examples, then offers "Learn more" or "Take a quiz" paths
-   ![Grammar Exercise](screenshots/46c-ai-buddy-grammar-exercise.png)
+4. The AI Buddy introduces itself via a title card and offers topic suggestions tailored to the user's vocabulary
+   ![Grammar Buddy](screenshots/17-ai-buddy-grammar.png)
 
-5. For Conjugation: Buddy detects verbs the user has learned and focuses on those, adapting to skill level
-   ![Conjugation Buddy](screenshots/47-ai-buddy-conjugation.png)
+5. User selects a quick-reply topic or types a custom request
 
-### 7.7 Upgrading to Pro
+6. The Buddy provides an explanation with examples, then offers further practice
+   ![Exercise](screenshots/17b-ai-buddy-exercise.png)
 
-1. User clicks "Upgrade to Pro" from the sidebar or encounters a gated feature
+7. Congratulations messages appear when the user completes exercises successfully
 
-2. Pricing page displays Free vs Pro feature comparison and three pricing options
-   ![Pricing](screenshots/38-pricing.png)
-   ![Full Pricing](screenshots/38b-pricing-full.png)
+### 7.7 Story Reading Flow
 
-3. User selects a plan (Monthly €21.99, Annual €69.99/yr, Lifetime €127.49) and subscribes
+1. User navigates to Stories (via Explore tab)
+
+2. First-time users complete Stories onboarding (name, language, level, interests)
+   ![Stories Home](screenshots/24-stories-home.png)
+
+3. User selects a story from the library
+   ![Stories Library](screenshots/27-stories-library.png)
+
+4. Story detail page shows preview text with tap-to-translate and metadata
+   ![Story Detail](screenshots/25-story-detail.png)
+
+5. Stage 1 - First Read: User reads in target language with optional audio
+   ![Story Reading](screenshots/26-story-reading.png)
+
+6. User rates comprehension, enjoyment, and difficulty
+
+7. Stage 2 - Discover: Vocabulary breakdown into Key Phrases, Slang, Cultural Insights
+
+8. Stage 3 - Re-read: Bilingual view with translation toggle
+
+9. Stage 4 - Check: Sentence reordering comprehension exercise
+
+10. Stage 5 - Score: Final self-assessment and completion summary
+
+### 7.8 Upgrading to Pro
+
+1. User encounters a gated feature or clicks "Upgrade to Pro" from sidebar/banner
+
+2. Pricing page displays: "A whole new culture. For less than a coffee a day."
+
+3. Three plan options with savings highlighted:
+   - Lifetime: €76.50 (70% off, "BEST VALUE")
+   - Annual: €69.99/yr, €0.20/day (73% savings)
+   - Monthly: €21.99, €0.74/day
+   ![Pricing](screenshots/04-pricing-page.png)
+
+4. User selects a plan and completes payment
+
+5. Confirmation page acknowledges successful subscription
+
+6. All Pro features are immediately unlocked
 
 ---
 
@@ -497,21 +493,22 @@ The collective of Memrise users who create and share word lists. The Community W
 
 | Scenario | Handling |
 |----------|----------|
-| **Failed signup** | If the email is already registered, the system should display an appropriate error message |
-| **Select-product page JS error** | Observed during testing: the /select-product page occasionally fails to render (JS error "Cannot read properties of undefined (reading 'gridRows')"). Users are stuck on a white screen. Navigating directly to /dashboard works as a workaround |
-| **AI Buddies 404** | Direct navigation to /ai-buddies returns a 404. The correct URL is /buddies. Internal navigation from the sidebar works correctly |
-| **Exam Prep being rebuilt** | The /exam-prep URL returns a 404 with a redirect to Community Word Lists. Exam Prep is being rebuilt as a new feature (confirmed by stakeholder) |
-| **Phrasebooks deprecated** | The /phrasebook/* URLs redirect to a Community Word Lists page, confirming phrasebooks have been absorbed into the community content system |
-| **Empty state — My Words** | When no words have been learned, the My Words page shows an empty state with encouragement to start learning |
-| **Empty state — Notebook** | New users see empty Notebook tabs with no content until they save items from stories |
-| **Coming Soon features** | "Your Growth" and "Practice" sections in Stories display "Coming Soon" placeholders rather than functional content |
-| **Story skip** | Users can skip the "Check" (sentence reordering) exercise, which is recorded as "Skipped" in the completion summary |
-| **Streak reset** | If a user misses a day, the streak resets to zero. The manual override in Learning Settings allows restoration |
-| **Multiple products confusion** | Users navigate between two distinct products (Self-Study at /dashboard and Stories at /stories) with different navigation structures, which may cause confusion |
-| **Free user hitting Pro gates** | When free users attempt to access Pro-only features, the system should redirect to the pricing page |
-| **Free tier conversation exhaustion** | When a free user runs out of conversation messages (~10 per session), the input field shows "Messages left: 0" and further input is disabled |
-| **Language-dependent sidebar** | Features like Talk Prep, AI Buddies, and Stories do not appear in the sidebar for all languages (e.g., not visible for Japanese), which may confuse users who switch languages |
-| **Browser compatibility** | The Stories product is a modern SPA that may have rendering issues in older browsers |
+| **Failed signup** | If the email is already registered, the system displays an appropriate error message and offers sign-in link |
+| **Unsupported language pair for features** | Speak tab shows "Speaking practice not available" banner. Explore tab hides unsupported feature cards. Sidebar adapts to only show available tabs |
+| **Free user hitting Pro gates** | Feature Upsell Modal appears with specific messaging per feature type (videos, conversations, review modes, buddy types, AI generation). Links to pricing page |
+| **Free tier conversation exhaustion** | When free user runs out of messages (~10 per session), input field shows "Messages left: 0" and further input is disabled |
+| **Empty state - My Words** | When no words have been learned, the My Words page shows an empty state with encouragement to start learning |
+| **Empty state - Notebook** | New users see empty Notebook tabs with no content until they save items from stories |
+| **Streak reset** | If a user misses a day, the streak resets to zero. Manual override available in Learning Settings |
+| **No pronunciation buddy available** | The Pronunciation Card is hidden from both Home and Speak pages when the pronunciation buddy is not available for the language pair |
+| **No immerse data available** | The Immerse Card is hidden from the Home page when no videos exist for the language pair |
+| **Labs no prototypes available** | If no Labs prototypes match the current language pair, the Labs page shows an empty state |
+| **Trial expiry** | Pro Trial Expired Modal appears when the 3-day trial ends, prompting user to subscribe or continue on free tier |
+| **Multiple products confusion** | Users navigate between Self-Study and Stories with different navigation structures. Stories has its own onboarding and settings |
+| **Language-dependent sidebar** | Features appear/disappear based on selected language. Switching languages may cause unexpected navigation changes |
+| **Wordlist completion** | When a user completes all words in their current word list, a completion screen appears with next-step recommendations |
+| **Network errors** | Full-page error component displayed for API failures. React Query handles retry logic |
+| **Exam Prep via external app** | Exam Prep loads in an embedded Kotlin application; connectivity issues or JS errors in the embedded app may cause blank screens |
 
 ---
 
@@ -519,377 +516,74 @@ The collective of Memrise users who create and share word lists. The Community W
 
 | Category | Requirement |
 |----------|-------------|
-| **Performance** | Vocabulary lessons with video should load within 3 seconds on a standard broadband connection. Audio playback should begin within 1 second of pressing play |
-| **Scalability** | The platform serves 370,000+ Pro subscribers (per marketing page) and must handle concurrent learning sessions across all languages |
-| **Availability** | The platform should be available 24/7 with minimal downtime, as users learn across all time zones |
-| **Security** | User credentials must be securely stored. Social authentication (Facebook, Apple) must follow OAuth 2.0 standards. Session management must prevent unauthorized access |
-| **Privacy** | GDPR compliance: users can download personal data and delete their accounts. Cookie consent is required for EU users |
-| **Accessibility** | The platform includes "Skip to main content" links, keyboard shortcuts in lessons, and ARIA labels on interactive elements. Lesson interface supports keyboard navigation (number keys for answer selection) |
-| **Localization** | The platform interface is available in 25+ languages (Arabic, Chinese, Dutch, English, French, German, Hindi, Indonesian, Italian, Japanese, Korean, Norwegian, Persian, Polish, Portuguese, Russian, Spanish, Swedish, Turkish, Vietnamese, etc.) |
-| **Mobile Responsiveness** | The web application references companion mobile apps; the web interface should be responsive for tablet and mobile viewports |
-| **Content Delivery** | Native speaker videos and audio files must be served efficiently via CDN to minimize latency across global regions |
-| **Data Persistence** | Learning progress, streaks, notebook entries, and word list subscriptions must persist reliably across sessions and devices |
-| **Offline Support** | Not observed in web version; likely a mobile-only feature |
+| **Performance** | Vocabulary lessons with video should load within 3 seconds on standard broadband. Audio playback should begin within 1 second of pressing play. React Query caching reduces redundant API calls (stale times configured per query) |
+| **Scalability** | The platform serves 370,000+ Pro subscribers and must handle concurrent learning sessions across all languages. API calls are deduplicated with React Query |
+| **Availability** | 24/7 availability required as users learn across all time zones. Kubernetes-based infrastructure with health checks |
+| **Security** | Secure credential storage. OAuth 2.0 for social auth (Google, Facebook, Apple). Session management via secure cookies. Sentry error reporting excludes sensitive data |
+| **Privacy** | GDPR compliance: users can download personal data and delete accounts. Cookie consent required for EU users. Analytics tracking via Snowplow with consent management |
+| **Accessibility** | "Skip to main content" links, ARIA labels on interactive elements, keyboard navigation support in lessons. Responsive design for screen readers |
+| **Localization** | Platform interface available in 25+ languages (Arabic, Chinese Traditional/Simplified, Dutch, English UK/US, French, German, Hindi, Indonesian, Italian, Japanese, Korean, Norwegian, Persian, Polish, Portuguese, Russian, Spanish, Swedish, Turkish, Vietnamese) |
+| **Mobile Responsiveness** | Responsive design with mobile-first approach. Mobile navigation bar replaces sidebar on small viewports. Media queries at theme breakpoints |
+| **Content Delivery** | Native speaker videos and audio served via CDN. Image optimization for lesson cards and UI assets |
+| **Data Persistence** | Learning progress, streaks, notebook entries, and word list subscriptions persist reliably across sessions. React Query cache with configurable stale/GC times |
+| **Analytics** | Multi-provider analytics: Snowplow (event tracking), Braze (engagement), Datadog (performance monitoring). Google Tag Manager data layer integration |
+| **Error Monitoring** | Sentry integration for client-side error tracking across all pages. Full-page error boundaries for graceful degradation |
+| **Reliability** | API status checks and health monitoring. Graceful degradation when individual features are unavailable |
 
 ---
 
 ## 10. Assumptions and Unknowns
 
-### Confirmed Facts (from stakeholder input)
+### Confirmed Facts (from codebase analysis)
 
-1. **Stories is an experiment:** Memrise Stories is currently a beta experiment running alongside the core Self-Study App. It is not intended to replace the classic product at this time.
+1. **Spring Cleaning is fully rolled out:** The isSpringCleaning threshold is set to userId > 0, meaning all users see the new Spring Cleaning navigation layout (Home, Learn, Speak, Explore tabs).
 
-2. **Geo-based pricing:** Pricing varies by country/region. The Euro amounts shown (€21.99/mo, €69.99/yr, €127.49 lifetime) are region-specific and will differ for users in other markets.
+2. **Geo-based pricing:** Pricing varies by country/region. The Euro amounts shown (Lifetime €76.50, Annual €69.99/yr, Monthly €21.99/mo) are region-specific. Lifetime pricing shows 70% off from €254.99.
 
-3. **AI feature strategy is evolving:** The relationship between AI Buddies, Talk Prep, and MemBot Conversations is still being evaluated. All three may coexist, or some may be consolidated based on user data.
+3. **Token-based feature gating:** Pro features use a granular token system where each feature type (videos, conversations, review modes, individual buddy types, AI word generation) has independent availability checks.
 
-4. **Your Growth and Practice are next-quarter launches:** The "Coming Soon" placeholders in the Stories product represent features planned for release within the next quarter.
+4. **Labs prototypes are hosted externally:** All Labs features are Replit-hosted applications that receive authentication tokens from the main platform. They are language-pair filtered.
 
-5. **Community content moderation:** Community Word Lists use a community reporting and flagging system for quality control, rather than editorial pre-review.
+5. **Stories is a separate Replit app:** Memrise Stories is hosted externally and opened via authenticated redirect, not built into the main web client SPA.
 
-6. **Exam Prep is being rebuilt:** The former Exam Prep page was taken down and is being rebuilt as a new feature, not simply merged into Community Word Lists.
+6. **Exam Prep is a separate Kotlin app:** Exam preparation is delivered via an embedded Kotlin application, separate from the main React codebase.
 
-7. **Consumer subscriptions are the sole revenue model:** There are no institutional or B2B licensing arrangements. Revenue comes entirely from consumer Pro subscriptions.
+7. **AI Buddies expanded to 7+ types:** Beyond the original 6, buddies now include Translator and Culture types with per-type Pro gating.
 
-8. **Stories are entirely human-authored:** All story content (text, cultural insights, vocabulary annotations) is written by human authors, not generated by AI.
+8. **Consumer subscriptions are the sole revenue model:** No institutional or B2B licensing. Revenue comes from consumer Pro subscriptions.
+
+9. **Conversations support voice input:** The conversation interface supports both text input and microphone-based voice input for speaking practice.
+
+10. **Experience versioning:** The platform supports "2024" and "2025" experience types, with 2025 being the current default that enables the Spring Cleaning layout.
 
 ### Assumptions
 
-1. **Pro subscription spans both products:** It is assumed that a single Pro subscription unlocks premium features in both the Self-Study App and Stories, though this was not explicitly verified.
+1. **Pro subscription spans all products:** A single Pro subscription is assumed to unlock premium features across the Self-Study App, Stories, and Labs prototypes.
 
-2. **Mobile apps offer additional features:** The web product references mobile apps in multiple places; it is assumed the mobile experience may include additional features like speech recognition, push notifications, and offline mode.
+2. **Mobile apps mirror web features:** The web product references mobile apps; it is assumed the mobile experience includes additional features like push notifications, offline mode, and device-native speech recognition.
 
-3. **AI features are Pro-gated:** AI Buddies, unlimited Conversations, and Talk Prep are assumed to have usage limits on the free tier, based on the pricing page feature comparison.
+3. **Spaced repetition algorithm:** The Review and Speed Review session types with configurable intervals strongly suggest a spaced repetition algorithm underlies vocabulary review.
 
-4. **Spaced repetition is used:** Though not explicitly confirmed through the UI alone, the "Review" and "Speed Review" session types with configurable intervals strongly suggest a spaced repetition algorithm underlies the vocabulary review system.
+4. **Stories are human-authored:** Based on previous stakeholder input, all story content is written by human authors rather than AI-generated.
 
 ### Unknowns
 
-1. **Revenue model details:** Exact conversion rates between free and Pro tiers, trial-to-paid conversion, and the relative proportion of Monthly/Annual/Lifetime subscribers are unknown.
+1. **Revenue model details:** Conversion rates between free and Pro tiers, trial-to-paid conversion, and relative proportion of Monthly/Annual/Lifetime subscribers.
 
-2. **AI model backing:** Which language models power the MemBot conversations, AI Buddies, and story generation is not visible from the front end.
+2. **AI model backing:** Which language models power MemBot conversations, AI Buddies, pronunciation feedback, and exam prep grading.
 
-3. **Offline capabilities:** Whether the web app supports any offline learning, and what offline features the mobile apps provide, is unknown.
+3. **Offline capabilities:** Whether the web app supports any offline learning (service worker caching), and what offline features mobile apps provide.
 
-4. **A/B testing:** Whether different users see different onboarding flows, pricing, or feature gates is unknown.
+4. **A/B testing:** Whether different users see different onboarding flows, pricing, or feature gates via feature flags.
 
-5. **Analytics and progress algorithms:** How comprehension progress is calculated, how the "My Journey" stage progression works, and what triggers level-up recommendations are opaque from the UI.
+5. **Points/levels algorithm:** How points are calculated per activity type, what triggers level-ups, and how stage progression is determined.
 
-6. **Stories language expansion:** Stories currently shows only Spanish, French, and English. The expansion roadmap to additional languages is TBD.
+6. **Stories language expansion:** Stories currently supports limited languages. The expansion roadmap is unknown.
 
-7. **Data portability:** While personal data download exists, the format and completeness of exported data is unknown.
+7. **Podcast feature scope:** "Interactive English Podcasts" appears in Labs; its relationship to the core product and expansion plans are unclear.
 
-8. **Notification system:** Whether the platform sends email reminders, streak warnings, or learning nudges is not visible from the web interface alone.
+8. **Daily.co integration:** The codebase includes Daily.co video SDK dependencies, suggesting potential live video/call features that may not yet be publicly visible.
 
-9. **Exam Prep redesign scope:** The rebuilt Exam Prep feature's shape, timeline, and target exams are unknown.
+9. **Notification system:** Whether the platform sends email reminders, streak warnings, or learning nudges is not visible from the web interface alone.
 
----
-
-## 11. Mobile App (iOS & Android) — Supplemental Requirements
-
-> This section documents mobile-specific UI patterns, screens, and flows observed from the native iOS and Android apps that differ from or extend the web experience. Each subsection includes actual mobile screenshots mapped to their web counterparts from earlier sections.
-
-### 11.1 Welcome / Splash Screen
-
-The mobile app opens with a distinctive yellow splash screen explaining Memrise's value proposition.
-
-![Mobile — Welcome Screen](screenshots/mobile-01-welcome.png)
-
-**Key elements:**
-- Yellow background (#FFC800) with the tagline "Why is Memrise different?"
-- Three benefit blocks with icons: native speaker videos, AI conversation practice, spaced repetition
-- Two CTAs: "Get started" (dark navy pill) and "I have an account" (text link)
-
-**Web counterpart → Section 2.1 Landing Page:**
-
-![Web — Landing Page](screenshots/01-landing-page.png)
-
-The web landing page serves the same purpose but uses a horizontal hero layout with a "Get started — it's free!" CTA. The mobile version is vertically stacked and more concise.
-
----
-
-### 11.2 Language Selection
-
-After tapping "Get started", users choose their native language and target language.
-
-![Mobile — Language Selection](screenshots/mobile-02-language-selection.png)
-
-**Key elements:**
-- "I speak English (US)" preset at top with change option
-- "I want to learn" heading with searchable alphabetical language list
-- Flag icons next to each language name
-- Full-screen modal with back navigation
-
-**Web counterpart → Section 2.2 Signup & Onboarding:**
-
-![Web — Language Selection](screenshots/02-signup-start.png)
-
-The web uses a grid of language cards with flags, while mobile uses a scrollable list format optimized for one-handed use.
-
----
-
-### 11.3 Sign Up
-
-The signup screen shows authentication options with the selected language flag.
-
-![Mobile — Sign Up](screenshots/mobile-03-signup.png)
-
-**Key elements:**
-- Selected language flag displayed prominently (e.g., Japanese 🇯🇵)
-- Four sign-up methods stacked vertically: Apple, Google, Facebook, Email
-- Each method uses a full-width pill button with provider icon
-- "Already have an account?" link at the bottom
-
-**Web counterpart → Section 2.2:**
-
-![Web — Signup Form](screenshots/03-onboarding-signup.png)
-
-The web signup similarly offers social auth + email, but embeds it in a multi-step onboarding wizard rather than a standalone screen.
-
----
-
-### 11.4 Skill Level Selection
-
-Users tailor their experience by selecting their current proficiency.
-
-![Mobile — Skill Level Selection](screenshots/mobile-04-skill-level.png)
-
-**Key elements:**
-- Heading: "Tailor your lessons by choosing your level"
-- Four level options as tappable cards: "Learn from scratch", "Getting started", "Making good progress", "Improving my skills"
-- Each card has an icon and brief description
-- Clean white background with ample spacing
-
-**Web counterpart → Section 2.2:**
-
-![Web — Skill Level Selection](screenshots/05-course-home.png)
-
-The web version presents skill levels as part of the onboarding wizard flow with similar options but different visual treatment.
-
----
-
-### 11.5 Free vs PRO Comparison
-
-A bottom-sheet modal showing the feature comparison between free and paid tiers.
-
-![Mobile — Free vs PRO Comparison](screenshots/mobile-05-free-vs-pro.png)
-
-**Key elements:**
-- Dark navy header: "Unlock even more features" in yellow text
-- Subtitle: "Join 370,000 learners committed to PRO" in white
-- Two-column comparison table: Feature name | Free (gray check) | PRO (yellow check)
-- Features listed: All languages, Native speaker videos, Conversation practice with AI, Sentence builder exercises, Pronunciation practice, Unlock all vocabulary lessons, AD FREE, Grammar lessons, Verb conjugation drills, Extra role-play sessions
-- Sticky CTA: "View PRO plans" yellow pill at bottom
-- "I'll stay on free plan" text link below
-
-**Web counterpart → Section 5.1 Pricing Page:**
-
-![Web — Pricing Comparison](screenshots/38-pricing.png)
-
-The web pricing page uses a wider card-based layout with monthly/annual toggle, while mobile uses a compact bottom-sheet checklist format.
-
----
-
-### 11.6 Points & Levels System
-
-An onboarding screen introducing the gamification mechanics.
-
-![Mobile — Points & Levels](screenshots/mobile-06-points-levels.png)
-
-**Key elements:**
-- Title: "Introducing points & levels"
-- Visual pyramid of numbered circles (1–5) showing level progression
-- Explanation text describing how points are earned through learning activities
-- Yellow "OK" CTA button at bottom
-- Shown once during first-time onboarding
-
-This screen has no direct web counterpart — the web exposes points/levels inline on the dashboard rather than as a dedicated onboarding step.
-
----
-
-### 11.7 Home Dashboard — "My Words" Coach Mark
-
-The home dashboard with an overlay coach mark introducing the "My Words" feature.
-
-![Mobile — Home with My Words Coach Mark](screenshots/mobile-07-home-mywords-coach.png)
-
-**Key elements:**
-- Dashboard visible behind a semi-transparent overlay
-- Coach mark bottom sheet: "Introducing My Words!" with description and "Check it out!" CTA
-- Dashboard shows: language flag pill (Spain 🇪🇸), score block, landmark illustration (Sagrada Familia), current lesson progress
-- Header: flag selector, stats icon, book icon, streak badge (fire + count), avatar circle
-
-**Web counterpart → Section 3.1 Self-Study Dashboard:**
-
-![Web — Self-Study Dashboard](screenshots/29-classic-dashboard.png)
-
-The web dashboard has a wider layout with sidebar navigation. The mobile version condenses this into the tab-based layout with the same core widgets (score, streak, suggested session) but uses coach marks for feature discovery.
-
----
-
-### 11.8 Home Dashboard — "My Activities" Coach Mark
-
-The same dashboard with a coach mark for the "My Activities" feature.
-
-![Mobile — Home with My Activities Coach Mark](screenshots/mobile-08-home-activities-coach.png)
-
-**Key elements:**
-- Coach mark bottom sheet: "Introducing My Activities!" with description and CTA
-- Points to the activities/stats section of the dashboard
-- Part of the progressive disclosure onboarding — shown after "My Words" coach mark
-
-**Web counterpart:** The web doesn't have a dedicated "My Activities" equivalent; activity stats are distributed across the dashboard and profile pages.
-
----
-
-### 11.9 Home Dashboard — Full View
-
-The complete home dashboard without overlays, showing the primary learning interface.
-
-![Mobile — Home Dashboard Full View](screenshots/mobile-09-home-full.png)
-
-**Key elements:**
-- **Header bar:** Language flag pill, book dropdown, stats icon, book icon, streak badge (yellow pill with 🔥 + count), avatar circle
-- **Score block:** Current points display with level indicator
-- **Landmark illustration:** Cultural landmark for the selected language (e.g., Sagrada Familia for Spanish)
-- **Lesson progress:** Current lesson card with "Learn words" sticky bar at bottom
-- **Tab bar:** 5 persistent tabs — Home, Scenarios, Videos, Conversations, AI Buddies
-- **PRO banner:** Promotional banner for upgrading (if on free tier)
-
-**Web counterpart → Section 3.1:**
-
-![Web — Dashboard with Community Lists](screenshots/49-dashboard-bottom.png)
-
-The web dashboard includes community word lists and Memrise Labs links that don't appear on mobile. The mobile version focuses on the core learning loop with a single prominent CTA.
-
----
-
-### 11.10 Navigation — Tab Bar
-
-The mobile apps use a persistent bottom tab bar visible in the full home view (mobile-09) with 5 tabs:
-
-| Tab | Icon | Description |
-|-----|------|-------------|
-| Home | House | Central dashboard with score block, streak, pro banner, suggested session |
-| Scenarios | Map | Learning path / scenario discovery |
-| Videos | Play circle | Native speaker video library |
-| Conversations | Chat bubbles | MemBot conversations — Chats & Missions |
-| AI Buddies | Sparkles | AI practice tools grid |
-
----
-
-### 11.11 Conversations Tab (Mobile)
-
-The mobile Conversations tab differs from web in layout:
-
-- **Photo card design:** Each conversation scenario shows a full-width photograph (e.g., a café for "Ordering your favourite coffee") with a dark navy "Missions" or "Chats" badge overlaid in the top-left corner
-- **Filter tabs:** Horizontal pills at the top — "All", "Chats", "Missions" — using dark fill for the active state
-- **MemBot footer:** "MemBot - powered by AI" label centered below the card list
-- **Promo banner:** Persistent navy pill at the top promoting Memrise Lifetime discount (e.g., "64% off Memrise Lifetime")
-- **Header bar:** Flag pill (selected language), book dropdown, stats icon, book icon, streak badge, avatar circle
-
-**Web counterpart → Section 3.4:**
-
-![Web — Conversations Scenario List](screenshots/32-conversations.png)
-
----
-
-### 11.12 AI Buddies (Mobile)
-
-- **2×2 colored grid:** Four buddy cards in a 2-column grid, each with a distinct background color:
-  - Assistant — green (#2D8B6F)
-  - Sentence Builder — purple (#6B5CE7)
-  - Pronunciation — teal (#2D8B8B)
-  - Grammar — navy (#1B1F3B) with a lock icon (Pro-gated)
-- **"Beta" badge:** Yellow rounded badge next to "Your Buddies" title
-- **Robot avatars:** Each card has a white circle with an icon representing the buddy type
-- **"Meet your Buddies!" bottom sheet:** Slides up with overlapping avatar circles, title, description, and a yellow "Say Hello" CTA button
-
-**Web counterpart → Section 3.6:**
-
-![Web — AI Buddies Selection Menu](screenshots/34-ai-buddies.png)
-
----
-
-### 11.13 Streak Celebration Modal
-
-Triggered when a user completes their daily learning activity:
-
-- **Modal overlay** with close button (X) in top-left
-- **Fire icon** (🔥) inside a green-bordered circle with small celebration dots (yellow, green, coral) around it
-- **Title:** "Your daily streak has grown! 🔥"
-- **Description:** "Each day watch a video, practice a conversation, learn or review words to keep your streak growing."
-- **Current streak display:** "Current streak: N day(s)"
-- **Weekly calendar:** S M T W T F S with checkmark circles on completed days
-- **"Got it" CTA:** Full-width yellow rounded button
-
----
-
-### 11.14 My Activities Screen
-
-Accessed from the Home dashboard via "My Activities" pill:
-
-- **Time range toggle:** "Last 7 days" / "Last 30 days" pills with border highlight on active
-- **Date range label:** "Showing data for [date] - [date]"
-- **Three-pillar stats:**
-  - 🌱 **Learn words** — Words learned (with green trend badge), Words reviewed (green background cards)
-  - 🎬 **Hear my words** — Words heard, Videos watched, Videos understood, Partly understood (pink background cards)
-  - 💬 **Use my words** — Navigation pill to conversation stats
-- Each stat card shows the metric name, numeric value, and optional green up-arrow trend indicator
-
----
-
-### 11.15 Settings Screen (Mobile)
-
-| Section | Items |
-|---------|-------|
-| **Profile** | Username (read-only display), Email (read-only display) |
-| — | Reset password (chevron row) |
-| **Membership** | "FREE Membership" label with yellow "⭐ Upgrade" badge (or "PRO" if subscribed) |
-| **Settings links** | Learning & sound settings (chevron), Notification settings (chevron) |
-| **DARK MODE** | "Use device settings" with green toggle switch, moon icon |
-| **AUDIO PREFERENCES** | "Sound effects" with green toggle switch, speaker icon |
-| **Actions** | Help (chevron), Log out (chevron), Delete Account (chevron, red text) |
-
-Header: Close button (X) on left, "Settings" title centered, "Save" on right.
-
-**Web counterpart → Section 6:**
-
-![Web — Profile Settings](screenshots/36-profile-settings.png)
-
----
-
-### 11.16 Languages Management Screen
-
-- **Header:** Close button, "Languages" title, "+ Add" button
-- **Language list:** Each entry shows flag, language name, source language (e.g., "from English (UK)")
-- **Active language** has a yellow/gold border highlight
-- **Three-dot menu** per language for options (reset, remove)
-
----
-
-### 11.17 Mobile-Specific Streak Display
-
-In addition to the celebration modal, the streak appears in two places:
-
-1. **Home header:** Yellow pill with flame icon + streak count (tappable to open streak modal)
-2. **Buddies tab bottom sheet:** Shows "Your streak" section with:
-   - "Current N day(s)" with green progress bar + checkmark
-   - "Longest N day(s)" with green progress bar
-   - Description text about keeping streak growing
-
----
-
-### 11.18 App Store Requirements
-
-| Requirement | iOS | Android |
-|-------------|-----|---------|
-| Bundle ID | `com.memrise.mobile` | `com.memrise.mobile` |
-| Category | Education | Education |
-| iPad support | Yes (universal) | N/A |
-| Minimum OS | iOS 16+ | Android 6.0 (API 23) |
-| Permissions | Microphone (speaking practice), Notifications (daily reminders) | RECORD_AUDIO, POST_NOTIFICATIONS |
-| Privacy manifest | Required (UserDefaults API) | N/A |
-| Adaptive icon | N/A | Foreground image + cream background |
-| Dark mode | "Use device settings" toggle | "Use device settings" toggle |
-| Audio background mode | Yes (lesson audio) | Yes |
+10. **Community moderation scaling:** How quality control works as community word lists grow, beyond the basic reporting/flagging system.
