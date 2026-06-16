@@ -25,11 +25,12 @@
 
 | Feature | Description | Status |
 |---------|-------------|--------|
-| Landing Page | Public-facing marketing page with product pitch, "How It Works" carousel, audience personas (Traveler, Student, Professional), testimonials, and call-to-action for signup | **Stable** |
+| Landing Page | Public-facing marketing page with product pitch, "How It Works" carousel (4 slides), audience personas (Traveler, Student, Professional), "Is Memrise for me?" FAQ section, and call-to-action for signup | **Stable** |
 | Language Catalog | Searchable grid of 150+ languages available for learning, accessible from both marketing and onboarding flows | **Stable** |
 | Exam Prep Promotion | Marketing section promoting IELTS, GCSE, A-Level, IB, and CEFR-aligned exam preparation with AI-powered feedback | **Stable** |
-| Blog | Content marketing blog with language learning tips, cultural insights, and product updates | **Stable** |
-| Phrasebooks | Legacy feature - now redirects to Community Word Lists | **Deprecated** |
+| Blog | Content marketing blog ("MemNews") with language learning tips, cultural insights, and product updates | **Stable** |
+| Courses | Legacy feature - course pages now show 404 error. Navigation menu item still exists | **Deprecated** |
+| Phrasebooks | Legacy feature - phrasebook pages show "this page doesn't exist" notice with link to Community Word Lists. Navigation menu item still exists | **Deprecated** |
 
 ![Landing Page](screenshots/01-landing-page.png)
 
@@ -40,7 +41,7 @@
 | Feature | Description | Status |
 |---------|-------------|--------|
 | Language Selection | Searchable grid of 150+ target languages during signup. Languages displayed with native script names | **Stable** |
-| Account Creation | Email/password signup plus social auth (Google, Facebook, Apple). Interface available in 25+ languages | **Stable** |
+| Account Creation | Email/password signup plus social auth (Google, Facebook, Apple). Interface available in 23 languages | **Stable** |
 | Skill Level Assessment | 4-level self-assessment: Learn from scratch, Getting started, Making good progress, Improving my skills | **Stable** |
 | Goal Selection | Multi-select learning goals that influence word list recommendations | **Stable** |
 | Word List Curation | System-suggested word lists based on goals, with option to browse community lists | **Stable** |
@@ -102,7 +103,7 @@
 | Feature | Description | Status |
 |---------|-------------|--------|
 | Explore Hub | Discovery page consolidating Labs, Stories, Talk Prep, Skills Check, and AI Buddies into a single grid-based card layout with My Journey and My Activities dashboard cards below | **New** |
-| Memrise Labs | Experimental feature hub with 12+ beta prototypes: Character Writing Practice, Word Nuggets, My Grammar, Verb Conjugation Practice, Virtual Tutor, New Talk Back Mode, Arabic Script, Speak for Real, Interactive English Podcasts, Skills Check, Memrise Stories, and more | **Beta** |
+| Memrise Labs | Experimental feature hub with 11 production prototypes: Character Writing Practice, Word Nuggets, My Grammar, Verb Conjugation Practice, Virtual Tutor, New Talk Back Mode, Arabic Script, Speak for Real, Interactive English Podcasts, Skills Check, Memrise Stories. Additional non-production prototypes in development | **Beta** |
 | Memrise Stories | Story-based reading experience with a 5-step flow: First Read, Discover, Re-read, Check, Score. Separate onboarding with name, language, level, and interest selection. Categories include Food & Markets, Community & Local Life, Traditions & Celebrations | **Beta** |
 | Talk Prep | 3-step guided conversation practice: Build (shape conversation), Learn (practice saying lines), Perform (say from memory). Includes "Sound Like a Local" mode | **Beta** |
 | Skills Check | Exam preparation and English level assessment tool. Covers IELTS, GCSE, A-Level, IB, and CEFR-aligned practice with AI-generated feedback | **Beta** |
@@ -205,7 +206,7 @@
 | ID | Requirement |
 |----|-------------|
 | FR-1 | The system shall allow users to create accounts using email/password, Google, Facebook, or Apple authentication |
-| FR-2 | The system shall support learning 150+ languages from multiple source languages (25+ interface languages available) |
+| FR-2 | The system shall support learning 150+ languages from multiple source languages (23 interface languages available) |
 | FR-3 | The system shall present a 4-level skill assessment during onboarding and allow changes later in settings |
 | FR-4 | The system shall generate personalized word list recommendations based on the user's stated goals and skill level |
 | FR-5 | The system shall deliver vocabulary lessons that include native speaker video clips, multiple audio pronunciations, literal translations, and cultural context tips |
@@ -271,7 +272,7 @@
 | BR-15 | **Account Deletion:** Account deletion is permanent and irreversible. All learning progress is removed |
 | BR-16 | **Free Tier Conversation Limits:** Free users are limited to approximately 10 messages per AI conversation session, displayed as "Messages left: N" in the input field. Pro subscribers have unlimited messages |
 | BR-17 | **Language-Dependent Features:** Navigation adapts based on selected language. In Spring Cleaning mode: Speak tab shows only if pronunciation or conversations are supported; Explore tab always shows; specific features (Stories, Talk Prep, Skills Check) appear only for qualifying language pairs |
-| BR-18 | **Phrasebooks Deprecated:** Former Phrasebook pages redirect to Community Word Lists |
+| BR-18 | **Phrasebooks & Courses Deprecated:** Former Phrasebook and Course pages display a "page doesn't exist" notice with a link to Community Word Lists. The navigation menu items still exist on the marketing site |
 | BR-19 | **AI Buddy Skill Adaptation:** AI Buddies personalize their recommendations based on the user's self-assessed skill level and vocabulary they have previously learned |
 | BR-20 | **Token-Based Feature Gating:** Pro features use a token-based availability system. Each feature type (videos, conversations, review modes, buddy types, pronunciation, AI word generation) has independent availability checks |
 | BR-21 | **Spring Cleaning Navigation:** All users now see the Spring Cleaning layout (threshold is userId > 0, meaning all users). Navigation tabs are: Home, Learn, Speak, Explore. Videos tab appears only for non-Spring Cleaning users or those on the 2024 experience |
@@ -522,7 +523,7 @@ A gamification system where users earn points through learning activities. Point
 | **Security** | Secure credential storage. OAuth 2.0 for social auth (Google, Facebook, Apple). Session management via secure cookies. Sentry error reporting excludes sensitive data |
 | **Privacy** | GDPR compliance: users can download personal data and delete accounts. Cookie consent required for EU users. Analytics tracking via Snowplow with consent management |
 | **Accessibility** | "Skip to main content" links, ARIA labels on interactive elements, keyboard navigation support in lessons. Responsive design for screen readers |
-| **Localization** | Platform interface available in 25+ languages (Arabic, Chinese Traditional/Simplified, Dutch, English UK/US, French, German, Hindi, Indonesian, Italian, Japanese, Korean, Norwegian, Persian, Polish, Portuguese, Russian, Spanish, Swedish, Turkish, Vietnamese) |
+| **Localization** | Platform interface available in 23 languages: Arabic, Chinese Simplified, Chinese Traditional, Dutch, English (UK), English (US), French, German, Hindi, Indonesian, Italian, Japanese, Korean, Norwegian, Persian, Polish, Portuguese (Brazil), Russian, Spanish, Spanish (Mexico), Swedish, Turkish, Vietnamese |
 | **Mobile Responsiveness** | Responsive design with mobile-first approach. Mobile navigation bar replaces sidebar on small viewports. Media queries at theme breakpoints |
 | **Content Delivery** | Native speaker videos and audio served via CDN. Image optimization for lesson cards and UI assets |
 | **Data Persistence** | Learning progress, streaks, notebook entries, and word list subscriptions persist reliably across sessions. React Query cache with configurable stale/GC times |
